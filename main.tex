@@ -1,0 +1,46 @@
+% !TEX program=luatex
+\documentclass[12pt,a4paper]{article}
+\usepackage{luatexja-fontspec}
+\setmainjfont{FandolSong}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage[colorlinks]{hyperref}
+\usepackage{tikz-cd}
+\usepackage{geometry}
+\geometry{left=2cm,right=1cm, top=3cm,bottom=2cm}
+\theoremstyle{definition}
+\newtheorem{secdefn}{Definition}[subsection]
+\newtheorem{exer}{Exercies}[subsection]
+\newcommand*{\qeds}{\hfill\ensuremath{\clubsuit}}
+\begin{document}
+\noindent
+{\LARGE\underline{\textbf{2d CFT}}}\\
+{\hfill\large  \underline{\textbf{邹海涛}} \\
+	\hfill ID: 17210180015}\\
+%\normalsize ECE 100-003 \hfill Teammates: Student1, Student2 \\
+%TA: Adam Sumner \hfill Due Date: XX/XX/XX
+\section*{Week 1}
+\begin{exer}
+	By the homogeneous relation
+\[
+f(t,h)= b^{-d}f(b^{y_t} t, b^{y_h} h)
+\]
+we have 
+\[
+f(t,h)= t^{-\frac{d}{y_t}}g(\alpha)
+\]
+where $g(\alpha) = f(1,\alpha)$ and $\alpha = t^{-\frac{y_h}{y_t}}h$. It is easy to see that $\alpha$ is invariance under scaling transformation $x \to x/b$.
+Hence we have 
+\[
+\begin{aligned}
+&C(t,0) = -T \frac{\partial ^2 f}{\partial T ^2}\big|_{h=0} = - \frac{1}{T_c} t^{\frac{d}{y_t}-2}g''(0) \\
+& M(t,0) = -\frac{\partial f}{\partial B}\big|_{h=0} =t^{\frac{d-y_h}{y_t}}g'(0)\\
+& \chi(t,0) = \frac{\partial^2 f}{\partial B^2}\big|_{h=0} = t^{(d-2y_h)/y_t} g''(0)\\
+\end{aligned}
+\]
+As function with single variable $h$, $\lim_{t \to 0}  M(t,h) \sim h^{\frac{1}{\delta}} \sim \alpha^{\frac{1}{\delta}}$.	
+\end{exer}
+\end{document}
