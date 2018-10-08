@@ -171,4 +171,53 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 		\]
 	\end{itemize}
 \end{exer}
+\newpage
+\noindent
+{\LARGE\underline{\textbf{2d CFT}}}\\
+{\hfill\large  \underline{\textbf{邹海涛}} \\
+	\hfill ID: 17210180015}\\
+\section{Derivations}
+	\subsection{Energy-momentum tensor in complex coordinate}
+	Since 
+	\[
+	\begin{aligned}
+	&\partial_0 \Phi = \partial_z \Phi + \partial_{\bar{z}}\Phi\\&\partial_1 \Phi = i\partial_z \Phi - i \partial_{\bar{z}}\Phi
+	\end{aligned}
+	\]
+	we have \[
+	\begin{aligned}
+	&\partial_z \Phi =\frac{1}{2} \partial_0 \Phi - \frac{i}{2} \partial_1 \Phi\\& \partial_{\bar{z}} \Phi = \frac{1}{2} \partial_0 \Phi+ \frac{i}{2} \partial_1 \Phi
+	\end{aligned}
+	\] 
+	Also, since there are metric tensors in complex coordinates
+	\[
+	\begin{aligned}
+	g^{\alpha \beta}= \begin{pmatrix}
+	0&2 \\
+	2&0\\
+	\end{pmatrix}& &g_{\alpha \beta}\begin{pmatrix}
+	0& \frac{1}{2}\\
+	\frac{1}{2}& 0\\
+	\end{pmatrix}
+	\end{aligned}
+	\],
+	we have $\partial^z \Phi = 2 \partial_{\bar{z}}$ and $\partial^{\bar{z}} \Phi = 2\partial_{\bar{z}} \Phi$. Therefore, from definition of energy-momentum tensor
+	\[T_{\alpha \beta}= - g_{\alpha \beta} \mathcal{L}+ \frac{\partial \mathcal{L}}{\partial (\partial_\alpha \Phi)} \partial_\beta \Phi
+	\] we get expression of them in complex coordinates
+	\[
+	\begin{aligned}
+	&T_{zz} = \frac{1}{4}\big( \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_0 \Phi - i \frac{\partial}{\partial_1 \Phi} \partial_0 \Phi - i \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_1 \Phi - \frac{\partial \mathcal{L}}{\partial_1 \Phi} \partial_1 \Phi\big)\\
+	&T_{\bar{z}\bar{z}} = \frac{1}{4}\big( \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_0 \Phi + i \frac{\partial}{\partial_1 \Phi} \partial_0 \Phi + i \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_1 \Phi - \frac{\partial \mathcal{L}}{\partial_1 \Phi} \partial_1 \Phi \big)\\
+	&T_{z \bar{z}} = - \frac{1}{2} \mathcal{L} + \frac{1}{4} \big( \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_0 \Phi - i \frac{\partial}{\partial_1 \Phi} \partial_0 \Phi + i \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_1 \Phi + \frac{\partial \mathcal{L}}{\partial_1 \Phi} \partial_1 \Phi\big)\\
+	&T_{z \bar{z}} = - \frac{1}{2} \mathcal{L} + \frac{1}{4} \big( \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_0 \Phi + i \frac{\partial}{\partial_1 \Phi} \partial_0 \Phi - i \frac{\partial \mathcal{L}}{\partial_0 \Phi} \partial_1 \Phi + \frac{\partial \mathcal{L}}{\partial_1 \Phi} \partial_1 \Phi\big)\\
+	\end{aligned}
+	\]
+	Hence 
+	\[
+	\begin{aligned}
+	&T_{zz} = \frac{1}{4} (T_{00} - 2i T_{10} - T_{11})\\
+	&T_{\bar{z} \bar{z}} = \frac{1}{4} (T_{00} +2i T_{10} - T_{11})\\
+	&T_{z\bar{z}} =T_{\bar{z}z}= \frac{1}{4} (T_{00} + T_{11})\\
+	\end{aligned}
+	\]
 \end{document}
