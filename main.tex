@@ -1,5 +1,5 @@
 % !TEX program=luatex
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage{luatexja-fontspec}
 \setmainjfont{FandolSong}
 \usepackage{amsmath}
@@ -16,6 +16,7 @@
 \newtheorem{secdefn}{Definition}[subsection]
 \newtheorem{exer}{Exercies}[subsection]
 \newcommand*{\qeds}{\hfill\ensuremath{\clubsuit}}
+\DeclareMathOperator{\res}{Res}
 \begin{document}
 \noindent
 {\LARGE\underline{\textbf{2d CFT}}}\\
@@ -202,7 +203,7 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 	\end{aligned}
 	\],
 	we have $\partial^z \Phi = 2 \partial_{\bar{z}}$ and $\partial^{\bar{z}} \Phi = 2\partial_{\bar{z}} \Phi$. Therefore, from definition of energy-momentum tensor
-	\[T_{\alpha \beta}= - g_{\alpha \beta} \mathcal{L}+ \frac{\partial \mathcal{L}}{\partial (\partial_\alpha \Phi)} \partial_\beta \Phi
+	\[T_{\alpha \beta}= - g_{\alpha \beta} \mathcal{L}+ \frac{\partial \mathcal{L}}{\partial (\partial^\alpha \Phi)} \partial_\beta \Phi
 	\] we get expression of them in complex coordinates
 	\[
 	\begin{aligned}
@@ -220,4 +221,27 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 	&T_{z\bar{z}} =T_{\bar{z}z}= \frac{1}{4} (T_{00} + T_{11})\\
 	\end{aligned}
 	\]
+\section{Schwarzian derivative}
+\section{Virasoro algebra}
+The Larrent expansion of $z^{n+1}$ around $\omega$ is 
+\[
+z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \binom{n+1}{i}\omega^i (z-\omega)^{n+1 -i} +\cdots + \omega^{n+1}
+\]
+ Hence we have following residues:
+ \[
+ \begin{aligned}
+ &\res_{\omega} \frac{z^{n+1}}{(z-\omega)^4}= 2 \pi i \frac{(n+1)n(n-1)}{6} \omega^{n-2}\\ 
+&\res_{\omega} \frac{z^{n+1}}{(z-\omega)^2}= 2 \pi i (n+1) \omega^n\\
+&\res_{\omega} \frac{z^{n+1}}{z-\omega}= 2 \pi i \omega^{n+1}
+ \end{aligned}
+ \]
+  Hence we have 
+  \[
+  \begin{aligned}
+  &[L_n, L_m] = \frac{1}{(2 \pi i )^2} \oint_0 d \omega\ \omega^{m+1} \oint_\omega dz\ z^{n+1} \big(\frac{c}{2(z-\omega)^4} + \frac{2T(\omega)}{(z-\omega)^2} + \frac{\partial_\omega T(\omega)}{(z-\omega)} + \text{regular part}\big)\\
+  &= \frac{1}{2 \pi i} \oint_0 d\omega\ \omega^{m+1} \big( \frac{c}{12}(n+1)n(n-1) \omega^{n-2} + 2(n+1) \omega ^n T(\omega) + \omega^{n+1} \partial_{\omega} T(\omega) \big)&\\
+ &= \frac{1}{2 \pi i} \Big\{\oint_0 d\omega\ \Big( \frac{c(n+1) n(n-1)}{12} \omega^{m+n-1} )\Big) - (m-n) \oint_0 d\omega \omega^{m+n +1 } T(\omega) \Big\}&\\
+ &= \frac{c}{12} n (n^2-1) \delta_{n+m,0} - (m-n) L_{n+m}
+  \end{aligned}
+  \]
 \end{document}
