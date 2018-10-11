@@ -309,8 +309,22 @@ T(z)T(\omega) &= \frac{1}{4} : \psi(z) \partial_z \psi(z) :: \psi(\omega) \parti
 &\sim \frac{1}{4} \big\{\frac{2 \partial_\omega T(\omega)}{z-\omega} + \frac{4T(\omega)}{(z-\omega)^2} + \frac{1}{(z-\omega)^4}  \big\}
 \end{aligned}
 \]
- \section{Vertex operator and OPE}
- \section{$bc$ ghost system}
+\section{Vertex operator and OPE}
+If we write $\varphi(z,\bar{z})$ into laurent series since $\varphi$ is free boson, then we can find $\exp(ik \varphi)$ is product of infinite exponential components which are commutative. Hence the normal ordering has taylor expansion form
+\[
+:\exp(ik \varphi(z,\bar{z})): = \sum_{n=0}^{\infty} \frac{(ik)^n}{n!}: \varphi(z,\bar{z})^n:
+\]
+To justify that $:\exp(ik \varphi):$ is primary field, we calculate its OPE
+\[
+\begin{aligned}
+T(z):\exp{ik \varphi(\omega,\bar{\omega})}:& = - \frac{1}{2} \sum_{n=0}^{\infty} : \partial \varphi(z) \partial \varphi(z) :: \varphi(\omega, \bar{\omega})^n\\
+&\sim - \sum_{n=1}^{\infty} \frac{(ik)^n}{n!} n : \partial \varphi(z) \overbrace{\partial \varphi(z) \varphi(\omega,\bar{\omega})} \varphi(\omega,\bar{\omega})^{n-1}:\\
+&- \frac{1}{2}\sum_{n=2}^{\infty} \frac{(ik)^n}{n!} n(n-1) : \overbrace{\partial \varphi(z) \overbrace{\partial \varphi(z) \varphi(\omega, \bar{\omega})} \varphi(\omega,\bar{\omega})} \varphi(\omega,\bar{\omega})^{n-2}:\\
+&\sim \frac{ik \partial_\omega \varphi(\omega)}{z-\omega}:\exp(ik\varphi): +\frac{k^2}{2(z-\omega)^2} :\exp(ik\varphi):\\
+\end{aligned}
+\]
+This form implies that $:\exp(ik\varphi):$ is primary field with conformal dimension $\frac{k^2}{2}$.
+\section{$bc$ ghost system}
  \[
  \begin{aligned}
  T(z) b(\omega) & = (-2: b(z) \partial c(z): + :c(z) \partial b(z):) b(\omega)\\
