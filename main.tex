@@ -12,6 +12,7 @@
 \usepackage{tikz-cd}
 \usepackage{geometry}
 \geometry{left=2cm,right=1cm, top=3cm,bottom=2cm}
+\usepackage{simplewick}
 \theoremstyle{definition}
 \newtheorem{secdefn}{Definition}[subsection]
 \newtheorem{exer}{Exercies}[subsection]
@@ -221,8 +222,27 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 	&T_{z\bar{z}} =T_{\bar{z}z}= \frac{1}{4} (T_{00} + T_{11})\\
 	\end{aligned}
 	\]
-\section{Schwarzian derivative}
-\section{Virasoro algebra}
+\subsection{Schwarzian derivative}
+\[
+\tilde{T}(z+\epsilon(z)) = (1+ \partial_z \epsilon(z))^{-2}\Big[T(z)- \frac{c}{12}\big(\frac{\partial_z^3\epsilon(z)}{1+\partial_z\epsilon(z)}-\frac{2}{3} \frac{\partial_z^2 \epsilon(z)}{1+\partial_z \epsilon(z)}\big)\Big]
+\]
+Since 
+\[
+\frac{1}{1+\partial_z \epsilon(z)} = 1- \partial_z \epsilon(z) + (\partial_z \epsilon)^2 + \cdots
+\]
+we have 
+\[
+\begin{aligned}
+\tilde{T}(z+ \epsilon(z)) &\approx T(z)(1-2\partial_z \epsilon(z)) - \frac{c}{12} (\partial^3_z \epsilon(z) - \frac{2}{3} \partial^2_z \epsilon(z))\\
+& \approx T(z) - 2 \partial_z\epsilon(z) T(z) - \frac{c}{12}\partial^3_z\epsilon(z)
+\end{aligned}
+\]
+Hence
+\[
+\tilde{T}(z+ \epsilon(z)) - \big[\epsilon(z)\partial_z T(z) +T(Z)\big] \approx -\frac{c}{12} \partial^3_z\epsilon(z) - 2 \partial_z\epsilon(z)T(z) -\epsilon(z)\partial_z T(z) 
+\]
+It implies that $\delta_\epsilon(T(z)) = -\frac{c}{12} \partial^3_z\epsilon(z) - 2 \partial_z\epsilon(z)T(z) -\epsilon(z)\partial_z T(z) $.
+\subsection{Virasoro algebra}
 The Larrent expansion of $z^{n+1}$ around $\omega$ is 
 \[
 z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \binom{n+1}{i}\omega^i (z-\omega)^{n+1 -i} +\cdots + \omega^{n+1}
@@ -244,4 +264,116 @@ z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \bino
  &= \frac{c}{12} n (n^2-1) \delta_{n+m,0} - (m-n) L_{n+m}
   \end{aligned}
   \]
+ \subsection{Commutation relations in free boson}
+ \subsection{Hamitonian in free boson}
+ \subsection{Action of free fermion}
+ \[
+ S = \frac{1}{4\pi} \int d^2 x \psi^\dagger \gamma^0(\gamma^0 \partial_0 \psi + \gamma^1 \partial_1 \psi)
+ \]
+ But
+ \[
+ \gamma^0(\gamma^0 + \gamma^1) \psi = \begin{pmatrix}
+ \partial_0 + i \partial_1& 0 \\
+ 0 & \partial_0 - i \partial_1\\
+ \end{pmatrix} \psi
+ \]
+ Write $\psi$ as $\begin{pmatrix}
+ \varphi\\ \bar{\varphi}
+ \end{pmatrix}$, then we have $$ \gamma^0(\gamma^0 + \gamma^1) \psi = \begin{pmatrix}
+ 2\partial_{\bar{z}} \varphi\\ 2 \partial_{z} \bar{\varphi}
+ \end{pmatrix}$$
+ Hence 
+ \[
+	S = \frac{1}{2\pi} \int d^2 x (\bar{\varphi} \partial_{z} \bar{\varphi} +  \varphi \partial_{\bar{z}} \varphi)
+ \]
+ \subsection{$TT$ OPE in free fermion}
+By derivative, we get 
+\[
+\begin{aligned}
+\langle \psi (z), \partial_\omega \psi(\omega) \rangle \sim \frac{1}{(z-\omega)^2}& \\
+ \langle \partial_z \psi , \partial_\omega \psi \rangle \sim \frac{-2}{(z-\omega)^3}&\\
+\end{aligned}
+\]
+Hence 
+\[
+\begin{aligned}
+T(z) \partial_\omega \psi(\omega) & = \frac{1}{2} : \psi(z) \partial_z \psi(z): \partial_\omega \psi(\omega)\\
+& \sim -\frac{\psi(\omega)}{(z-\omega)^3} - \frac{1}{2} \frac{\partial_\omega \psi (\omega)}{(z-\omega)^2}
+\end{aligned}
+\]
+and 
+\[
+\begin{aligned}
+T(z)T(\omega) &= \frac{1}{4} : \psi(z) \partial_z \psi(z) :: \psi(\omega) \partial_\omega \psi(\omega)\\
+& \sim \frac{1}{4} \big\{ - \frac{:\partial_z \psi(z) \partial_\omega \psi(\omega)}{z-\omega} + \frac{2: \psi(z) \psi(\omega):}{(z-\omega)^3} - \frac{: \psi(z) \partial_\omega \psi(\omega) + \partial_z \psi(z) \psi(\omega):}{(z-\omega)^2} + \frac{1}{(z-\omega)^4} \big\}\\
+&\sim \frac{1}{4} \big\{\frac{2 \partial_\omega T(\omega)}{z-\omega} + \frac{4T(\omega)}{(z-\omega)^2} + \frac{1}{(z-\omega)^4}  \big\}
+\end{aligned}
+\]
+ \section{Vertex operator and OPE}
+ \section{$bc$ ghost system}
+ \[
+ \begin{aligned}
+ T(z) b(\omega) & = (-2: b(z) \partial c(z): + :c(z) \partial b(z):) b(\omega)\\
+ & 2 \frac{b(z)}{(z-\omega)^2} - \frac{\partial_z b(z)}{z-\omega}\\
+ \end{aligned}
+ \]
+ Take Taylor expansion of $b(z)$ and $\partial_z b(z)$ around $\omega$, we have
+ \[
+ T(z)b(w) \sim 2\frac{b(\omega)}{(z-\omega)^2} + \frac{\partial_\omega b(\omega)}{z-\omega}
+ \]
+ Hence the conformal dimension of $b$ is $2$.
+ 
+ Similarly, we have
+ \[
+ \begin{aligned}
+ T(z) c(\omega) & = (-2: b(z) \partial c(z): + :c(z) \partial b(z):) c(\omega)\\
+ & \sim - \frac{c(z)}{(z-\omega)^2} + 2\frac{\partial_z c(z)}{z-\omega}\\
+ & \sim -\frac{c(\omega)}{(z-\omega)^2} + \frac{\partial_\omega c(\omega)}{z-\omega}
+ \end{aligned}
+ \]
+Hence conformal dimension of $c$ is $-1$.
+ \[
+ \begin{aligned}
+ T(z)T(\omega)&= 4 :b(z) \partial c(\omega): : b(\omega) \partial c(\omega):\\
+ & - 2: c(z) \partial b(z) :: b(\omega) \partial c(\omega): - 2: b(z) \partial c(z):: c(\omega) \partial b(\omega):\\
+ & + c(z)\partial b(z) :: c(\omega) \partial b(\omega):\\
+ \end{aligned}
+ \]
+ We will calculate it term by term
+ \[
+ \begin{aligned}
+& 4:b(z) \partial c(z):: b(\omega) \partial c(\omega):\\
+&\sim 4 \Big(: \overbrace{b(z) \partial c(z)b(\omega) \partial c(\omega)}: + b(z)  \overbrace{\partial c(z)  b(\omega)} \partial c(\omega)+: \overbrace{b(z) \overbrace{\partial c(z) b(\omega)} \partial c(\omega)}: \Big)\\
+& \sim \frac{4(-: \partial_z c(z) b(\omega): +: b(z) \partial_\omega c(\omega):)}{(z-\omega)^2} - \frac{4}{(z-\omega)^4}\\
+& \sim - \frac{4}{(z-\omega)^4}+\frac{8b(\omega) \partial_\omega c(\omega)}{(z-\omega)^2} + \frac{-4: \partial^2_\omega c(\omega) b(\omega): + 4 \partial_\omega b(z) \partial_\omega c(\omega)}{z-\omega}
+ \end{aligned}
+ \]
+ and
+ \[
+\begin{aligned}
+ &2: c(z) \partial b(z) :: b(\omega) \partial c(\omega):\\
+ &
+ \sim 2\Big( -: \overbrace{c(z) \partial b(z) b(\omega)} \partial c(\omega) - :c(z)\overbrace{\partial b(z) b(\omega) \partial c(\omega))} - :\overbrace{\partial b(z) \overbrace{c(z) b(\omega)} \partial c(\omega)} \Big)\\
+ & \sim  \frac{4}{(z-\omega)^4} + \frac{4: c(z) b(\omega):}{(z-\omega)^3} - \frac{2: \partial b(z) \partial c(\omega)}{(z-\omega)} \\
+ & \sim \frac{4}{(z-\omega)^4} + \frac{4:c(\omega) b(\omega):}{(z-\omega)^3} + \frac{4 :\partial_\omega c(\omega) b(\omega):}{(z-\omega)^2} + \frac{2: \partial_\omega^2 c(\omega) b(\omega): -2 : \partial_\omega b(\omega) \partial_\omega c(\omega):}{z-\omega}
+\end{aligned}
+ \]
+ and symmetrically 
+ \[
+	\begin{aligned}
+	&2: b(z) \partial c(z):: c(\omega) \partial b(\omega)\\
+	& \sim \frac{4}{(z-\omega)^4} + \frac{4:b(\omega) c(\omega):}{(z-\omega)^3} + \frac{4 :\partial_\omega b(\omega) c(\omega):}{(z-\omega)^2} + \frac{2: \partial_\omega^2 b(\omega) c(\omega): -2 : \partial_\omega c(\omega) \partial_\omega b(\omega):}{z-\omega} 
+	\end{aligned}
+ \]
+ and
+ \[
+	\begin{aligned}
+	&c(z)\partial b(z) :: c(\omega) \partial b(\omega):\\
+	& \sim \frac{2: c(\omega) \partial_{\omega}b(\omega) }{(z-\omega)^2} + \frac{-\partial^2_\omega b(\omega) c(\omega)+\partial_\omega c(\omega)\partial_\omega b(\omega)}{z-\omega} - \frac{1}{(z-\omega)^4}
+	\end{aligned}
+ \]
+ Hence we have 
+ \[
+ T(z)T(\omega) \sim -\frac{13}{(z-\omega)^4} + \frac{2T(\omega)}{(z-\omega)^2} + \frac{\partial T(\omega)}{z-\omega}
+ \]
 \end{document}
