@@ -265,6 +265,32 @@ z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \bino
   \end{aligned}
   \]
  \subsection{Commutation relations in free boson}
+ We have 
+ \[
+ \varphi = \varphi_0 + \frac{4\pi}{l} \pi t + i \sum_{n \neq 0} \frac{1}{n} \Big( a_n e^{-2 \pi in (t-x)/l} + \bar{a}_n e^{-2 \pi n (t+x)/l}\Big)
+ \]
+ on cylinder. 
+ \[
+ \Pi = \frac{\pi_0}{l}+ \frac{1}{2l} \sum_{n \neq 0} \Big(a_n e^{-2\pi i n (t-x)/l} + \bar{a}_n e^{-2 \pi i n (t+x) /l}\Big)
+ \]
+  With $[\Pi, \Pi]=0$, we can get $[\pi_0, a_n] =0$ and $[\pi_0, \bar{a}_n]=0$. Furthermore, since $[\varphi, \varphi]=0$, we have $[\varphi_0, a_n]= [\varphi_0 ,\bar{a}_n]=0$.
+  \[
+  \begin{aligned}
+  &i \delta(x-y)=[\varphi(x,t), \Pi(y,t)]&= \frac{1}{l} [\varphi_0, \pi_0] + \frac{i}{2l} \sum_{n \neq 0, m \neq 0} \frac{1}{n}\Big([a_n, \bar{a}_m] \exp(-2 \pi i [(n+m)t -nx+my]/l)\\
+  && + [\bar{a}_n, a_m] \exp(-2\pi i [(n+m)t +nx -my]/l) \\
+  && + [a_n, a_m] \exp(-2\pi i [(n+m)t -nx -my]/l) \\
+  && + [\bar{a}_n, \bar{a}_m] \exp(-2\pi i [(n+m)t +nx+my]/l)\Big)\\
+  \end{aligned}
+  \]
+  Since $t$ can be arbitrary, $[a_n, \bar{a}_m] = [\bar{a}_n, a_m] =0$ when $n+m \neq 0$. Then let $t=0$, we get\[
+  \begin{aligned}
+  i \delta(x-y)&=[\varphi(x,0), \Pi(y,0)] \\
+  &= \frac{1}{l}[\varphi_0, \pi_0] + \frac{i}{2l} \sum_{n \neq 0}\frac{1}{n} \Big([a_n, \bar{a}_{-n}] e^{- 2 \pi i (-nx -ny)/l} + [\bar{a}_n, a_{-n}] e^{-2 \pi i (nx+ny)/l} + \text{other terms}\Big)\\
+   & = \frac{1}{l}[\varphi_0, \pi_0] + \frac{i}{l} \sum_{n \neq 0} \Big( \frac{2[a_n, \bar{a}_{-n}]}{n}  \Big)e^{2 \pi i(n(x+y))/l} + \text{other terms}
+  \end{aligned}
+  \]
+  Since $e^{2 \pi i (n(x+y))/l}$ is independent of $x-y$, then its coefficient is zero. Hence $[a_n, \bar{a}_{-n}]=0$.
+  Take integral of both left and right side, we can get $[\varphi_0, \pi_0] = i$ and $[a_n, a_{-n}] = [\bar{a}_n, \bar{a}_{-n}] = 1$.
  \subsection{Hamitonian in free boson}
  \subsection{Action of free fermion}
  \[
