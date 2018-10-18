@@ -18,6 +18,8 @@
 \newtheorem{exer}{Exercies}[subsection]
 \newcommand*{\qeds}{\hfill\ensuremath{\clubsuit}}
 \DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
 \begin{document}
 \noindent
 {\LARGE\underline{\textbf{2d CFT}}}\\
@@ -416,4 +418,32 @@ Hence conformal dimension of $c$ is $-1$.
  \[
  T(z)T(\omega) \sim -\frac{13}{(z-\omega)^4} + \frac{2T(\omega)}{(z-\omega)^2} + \frac{\partial T(\omega)}{z-\omega}
  \]
+\newpage
+\noindent
+{\LARGE\underline{\textbf{2d CFT}}}\\
+{\hfill\large  \underline{\textbf{邹海涛}} \\
+	\hfill ID: 17210180015}\\
+\section{Modular invariant}
+\[
+Z_R(\tau, \bar{\tau}) = \frac{1}{\lvert \eta (\tau) \rvert ^2} \sum_{m,n} q^{\frac{1}{2}(\frac{m}{R}+ \frac{Rn}{2})^2} \bar{q}^{\frac{1}{2} (\frac{m}{R} - \frac{Rn}{2})^2}
+\]
+\section{Modular transformation}
+We have 
+\[
+\begin{aligned}
+\gamma \cdot \tau &= \frac{a\tau + b}{c\tau + d}\\
+& = \frac{(a\tau +b)(c \bar{\tau} +d)}{\lvert c \tau +d \rvert^2}\\
+& = \frac{ac \lvert \tau \rvert^2 + bc \bar{\tau} + ad \tau}{\lvert c\tau + d\rvert ^2}\\
+& = \frac{ac \lvert \tau \rvert ^2 + (ad+ bc)\re \tau+ i(ad-bc) \im \tau}{\lvert c\tau +d \rvert ^2}\\
+\end{aligned}
+\]
+Since $ad-bc=1$, we can conclude that \[\im(\gamma \cdot \tau) = \frac{\im \tau}{\lvert c\tau +d\rvert^2}\]
+In the upper-half plane, the gray region can be described as
+\[
+\begin{aligned}
+-\frac{1}{2} \leq \re \tau \leq \frac{1}{2}\\
+\lvert \tau \rvert > 1
+\end{aligned}
+\]
+If $S$ acts on the gray region, then we have $S(z) = -\frac{1}{z} = - \frac{\bar{z}}{\lvert z \rvert ^2}$, hence it sends the region to the red region. And the blue region is the image of the gray origin under $T$. Finally, the transformation $ST$, maps to the green region.
 \end{document}
