@@ -5,7 +5,41 @@
 	\hfill ID: 17210180015}\\
 \section{Modular invariant}
 \[
-Z_R(\tau, \bar{\tau}) = \frac{1}{\lvert \eta (\tau) \rvert ^2} \sum_{m,n} q^{\frac{1}{2}(\frac{m}{R}+ \frac{Rn}{2})^2} \bar{q}^{\frac{1}{2} (\frac{m}{R} - \frac{Rn}{2})^2}
+Z_R(z, \bar{z}) = \frac{1}{\lvert \eta (\tau) \rvert ^2} \sum_{m,n} q^{\frac{1}{2}(\frac{m}{R}+ \frac{Rn}{2})^2} \bar{q}^{\frac{1}{2} (\frac{m}{R} - \frac{Rn}{2})^2}
+\]
+First, we compute the sum part. Let $z= x+ iy$
+\[
+\begin{aligned}
+\sum_{m,n}&= \sum_{m.n}q^{\frac{1}{2} ( \frac{m}{R}+ \frac{Rn}{2})^2} \bar{q}^{\frac{1}{2}(\frac{m}{R}+ \frac{Rn}{2})^2}\\
+&= \sum_{m,n}\exp\big\{z \pi i (\frac{m}{R}+ \frac{Rn}{2})^2 -\bar{z} \pi i (\frac{m}{R}- \frac{Rn}{2})^2 \big\}\\
+&= \sum_{m.n} \exp\big\{-\frac{2\pi y}{R^2}m^2 - \frac{\pi y R^2}{2}n^2 + 2\pi i xmn \big\}\\
+&= \sum_{m,n} \exp\big\{- \frac{2\pi y}{R^2} (m - \frac{R^2x i}{2y}n )^2\big\} \exp \big\{-\frac{\pi R^2 x^2 }{2y} n^2 - \frac{\pi R^2 y}{2}n^2\big\}
+\end{aligned}
+\]
+Let $ a= \frac{R^2}{2y}, b = \frac{\pi R^2 x}{y}n$ in Possion formula, then we have 
+\[
+\begin{aligned}
+&= \frac{R}{\sqrt{2y}} \sum_{m,n}\exp \big\{-\frac{\pi R^2}{2y} m^2 + \frac{\pi R^2 x}{y}mn - \frac{\pi R^2 x^2}{2y}n^2 -\frac{\pi R^2}{2} n^2\big\}\\
+&= \frac{R}{\sqrt{2y}}\sum_{m,n} \exp\big\{- \frac{\pi R}{2y}( m^2 - xmn + (xn)^2+(yn)^2\big\}\\
+& = \frac{R}{\sqrt{2y}} \sum_{m,n}\exp\big\{- \frac{\pi R}{2y}( (m-xn)^2+ (yn)^2)\big\}\\
+& = \frac{R}{\sqrt{2y}} \sum_{m,n}\exp\big\{- \frac{\pi R}{2y}\lvert n z -m \rvert ^2\big\}\\
+\end{aligned}
+\]
+Hence when $z \mapsto -1/z$, the sum part becomes
+\[
+\frac{R\lvert z\rvert}{\sqrt{2y}} \sum_{m,n}\exp\big\{- \frac{\pi R}{2y}\lvert n \bar{z} -m \rvert ^2\big\}= \frac{R\lvert z\rvert}{\sqrt{2y}} \sum_{m,n}\exp\big\{- \frac{\pi R}{2y}\lvert n z -m \rvert ^2\big\}
+\]
+Since we have
+\[
+\eta(- \frac{1}{z})= \sqrt{-iz} \eta(z)
+\]
+it norm is 
+\[
+\lvert \eta(- \frac{1}{z}) \rvert = \sqrt{\lvert z \rvert} \lvert \eta(z) \rvert
+\]
+Hence we can conclude that
+\[
+Z_R(z, \bar{z}) =Z_R(- \frac{1}{z}, -\frac{1}{\bar{z}})
 \]
 \section{Modular transformation}
 We have 
@@ -26,3 +60,42 @@ In the upper-half plane, the gray region can be described as
 \end{aligned}
 \]
 If $S$ acts on the gray region, then we have $S(z) = -\frac{1}{z} = - \frac{\bar{z}}{\lvert z \rvert ^2}$, hence it sends the region to the red region. And the blue region is the image of the gray origin under $T$. Finally, the transformation $ST$, maps to the green region.
+\section{Boson-Fermion correspondence}
+Calculate the OPE of $:e^{i \varphi}:$ directly
+\[
+\begin{aligned}
+:e^{i\varphi(z)}::e^{i\varphi(0)} &\sim\sum_{m,n,k} \frac{k!}{m!n!}\binom{m}{k}\binom{n}{k} (-\wick{\c\varphi(z)\c\varphi(0)}):(i\varphi(0)^{m+n-k}):\\
+& \sim \sum_{m,n,k} \frac{1}{k!}\ln^k(z) \frac{1}{(m-k)!}\frac{1}{(n-k)!}:i\varphi(0)^{m+n-k}:\\
+&= e^{\ln z} : e^{2i\varphi(0)}:\\
+&\sim 0
+\end{aligned}
+\]
+The OPE of $T_\varphi$ with vertex operators $:e^{i\varphi}$ and $:e^{-i\varphi}$ is given in last homework
+\[
+T_\varphi (z) :e^{i \varphi} \sim \frac{i \partial \varphi(0)}{z}:\exp(i\varphi(0)): +\frac{1}{2z^2} :\exp(i\varphi(0)):
+\]
+\[
+T_\varphi (z) :e^{-i \varphi} \sim \frac{-i \partial \varphi(0)}{z}:\exp(-i\varphi(0)): +\frac{1}{2z^2} :\exp(-i\varphi(0)):
+\]
+On the other hand, the OPE of $T_\psi$ with $\psi$ and $\bar\psi$ can be calculated as follows.
+First,
+\[
+\begin{aligned}
+\partial\bar{\psi}(z) \psi(0) &\sim \frac{1}{2}(\partial\psi^1(z) - i \partial\psi^2(z))(\psi^1(0)+ i \psi^2(0))\\
+& \sim - \frac{1}{z^2}
+\end{aligned}
+\]
+and
+\[
+\begin{aligned}
+ \bar{\psi}(z)\psi(0) & \sim \frac{1}{2} (\psi^1(z) - i\psi^2(z) )(\psi^1(0)+ i\psi(0))\\
+ & \sim \frac{1}{z}
+\end{aligned}
+\]
+Hence
+\[
+\begin{aligned}
+T_\varphi(z) \psi(0) =& - \frac{1}{2}\wick{:\psi  \c2\partial\bar{\psi}:\c2\psi(0) - \frac{1}{2}: \c2{\bar{\psi}} \partial \psi: \c2 \psi(0)}\\
+&\sim - \frac{1}{2}
+\end{aligned}
+\]
