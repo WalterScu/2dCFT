@@ -61,6 +61,7 @@ In the upper-half plane, the gray region can be described as
 \]
 If $S$ acts on the gray region, then we have $S(z) = -\frac{1}{z} = - \frac{\bar{z}}{\lvert z \rvert ^2}$, hence it sends the region to the red region. And the blue region is the image of the gray origin under $T$. Finally, the transformation $ST$, maps to the green region.
 \section{Boson-Fermion correspondence}
+\subsection{$:e^{i\varphi}: \cong \psi$, $:e^{-i\varphi} \cong \bar{\psi}$}
 Calculate the OPE of $:e^{i \varphi}:$ directly
 \[
 \begin{aligned}
@@ -72,10 +73,10 @@ Calculate the OPE of $:e^{i \varphi}:$ directly
 \]
 The OPE of $T_\varphi$ with vertex operators $:e^{i\varphi}$ and $:e^{-i\varphi}$ is given in last homework
 \[
-T_\varphi (z) :e^{i \varphi} \sim \frac{i \partial \varphi(0)}{z}:\exp(i\varphi(0)): +\frac{1}{2z^2} :\exp(i\varphi(0)):
+T_\varphi (z) :e^{i \varphi}: \sim \frac{\partial_z \exp(i\varphi)(0)}{z} +\frac{\exp(i\varphi)(0)}{2z^2}
 \]
 \[
-T_\varphi (z) :e^{-i \varphi} \sim \frac{-i \partial \varphi(0)}{z}:\exp(-i\varphi(0)): +\frac{1}{2z^2} :\exp(-i\varphi(0)):
+T_\varphi (z) :e^{-i \varphi}: \sim \frac{\partial_z \exp(-i\varphi)(0)}{z} +\frac{\exp(-i\varphi)(0)}{2z^2}
 \]
 On the other hand, the OPE of $T_\psi$ with $\psi$ and $\bar\psi$ can be calculated as follows.
 First,
@@ -83,6 +84,12 @@ First,
 \begin{aligned}
 \partial\bar{\psi}(z) \psi(0) &\sim \frac{1}{2}(\partial\psi^1(z) - i \partial\psi^2(z))(\psi^1(0)+ i \psi^2(0))\\
 & \sim - \frac{1}{z^2}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\bar{\psi}(z) \partial\psi(0) &\sim \frac{1}{2}(\psi^1(z) - i \psi^2(z))(\partial\psi^1(0)+ i \partial\psi^2(0))\\
+& \sim \frac{1}{z^2}
 \end{aligned}
 \]
 and
@@ -95,7 +102,55 @@ and
 Hence
 \[
 \begin{aligned}
-T_\varphi(z) \psi(0) =& - \frac{1}{2}\wick{:\psi  \c2\partial\bar{\psi}:\c2\psi(0) - \frac{1}{2}: \c2{\bar{\psi}} \partial \psi: \c2 \psi(0)}\\
-&\sim - \frac{1}{2}
+T_\varphi(z) \psi(0) =& - \frac{1}{2}\wick{:\psi  \c2{\partial\bar{\psi}}:\c2\psi(0) - \frac{1}{2}: \c2{\bar{\psi}} \partial \psi: \c2 \psi(0)}\\
+&\sim - \frac{1}{2}\psi(z)(-\frac{1}{z^2}) + \frac{1}{2} \frac{1}{z} \partial_z\psi(z)\\
+&\sim \frac{\psi(0)+ z\partial_z \psi(0)}{2 z^2} + \frac{\partial_z \psi(0)}{2z}\\
+&\sim \frac{\psi(0)}{2z^2} + \frac{\partial_z \psi(0)}{z}
+\end{aligned}
+\]
+
+and
+\[
+\begin{aligned}
+T_\varphi(z) \bar{\psi}(0) =& - \frac{1}{2}\wick{:\c\psi \partial\bar{\psi}:\c{\bar\psi(0)} - \frac{1}{2}: \bar{\psi} \c{\partial \psi}: \c{\bar{\psi}(0)}}\\
+&\sim  \frac{1}{2}\partial\bar{\psi}(z)(\frac{1}{z}) - \frac{1}{2} \bar{\psi}(z) (-\frac{1}{z^2})\\
+&\sim \frac{\bar{\psi}(0)+ z\partial_z \bar{\psi}(0)}{2 z^2} + \frac{\partial_z \bar{\psi}(0)}{2z}\\
+&\sim \frac{\bar{\psi}(0)}{2z^2} + \frac{\partial_z \bar{\psi}(0)}{z}\\
+\end{aligned}
+\]
+\subsection{$i\partial\varphi\cong\psi \bar{\psi}$ }
+Also, as calculated before, the OPE of $i\partial\varphi$ is as follows
+\[
+\begin{aligned}
+T_\varphi(z) (i\partial\varphi(0))& \sim \frac{i\partial \varphi(0)}{z^2} + \frac{i \partial^2_z \varphi(0)}{z} 
+\end{aligned}
+\]
+\[
+\begin{aligned}
+T_\psi(z) \psi \bar{\psi}(0)&= -\frac{1}{2} : \psi(z) \partial\bar{\psi}(z): \psi(0) \bar{\psi}(0) - \frac{1}{2}: \bar{\psi}(z) \partial \psi(z) : \psi(0) \bar{\psi}(0)\\
+&\sim \wick{-\frac{1}{2} : \psi(z) \c{\partial \bar{\psi}(z)}\c{\psi(0)} \bar{\psi}(0):} - \frac{1}{2}: \wick{\c{\psi}(z) \partial \bar{\psi}(z) \psi(0) \c{\bar{\psi}(0)}}:\\
+& \wick{-\frac{1}{2}: \c2{\psi}\c1{\partial \bar{\psi}} \c1{\psi(0)} \c2{\bar{\psi(0)}}:}\\
+& \wick{-\frac{1}{2}:\c1{\bar{\psi}(z)} \partial\psi(z) \c1\psi(0) \bar{\psi}(0:) - \frac{1}{2}: \bar{\psi}(z) \c1{\partial\psi(z)} \psi(0) \c1{\bar{\psi}(0)} } \\
+& \wick{-\frac{1}{2}: \c2{\bar{\psi}(z)} \c1{\partial\psi(z)} \c2{\psi(0)} \c1{\bar{\psi}(0)}}\\
+&\sim  \frac{\partial \bar{\psi}(0) \psi(0)- \partial \psi(0) \psi(0) + \partial\psi(0) \bar{\psi}(0) - \partial\bar{\psi}(0)\psi(0)}{2z}\\&+\frac{\bar{\psi}(0) \psi(0)  - \psi(0) \bar{\psi}(0)}{2z^2}\\
+&\sim \frac{\partial(\psi\bar{\psi})(0)}{z}+ \frac{\psi\bar{\psi}(0)}{z^2}
+\end{aligned}
+\]
+(Tips: I'm confused here. Is the $i$ in $i \partial\varphi$ necessary? I failed to get it in Fermion side.)
+\subsection{$T_\varphi \cong T_\psi$}
+Finally, we compute the TT OPE for $\varphi$ and $\psi$. We have
+\[
+T_\varphi(z) T_\varphi(0) \sim \frac{1/2}{z^4} + \frac{2T_\varphi(0)}{z^2} + \frac{\partial T_\varphi(0)}{z}
+\]
+In complex Fermion case, we have
+\[
+\begin{aligned}
+T_\psi(z) T_\psi(0) &\sim \frac{1}{4} \Big[: \psi(z) \partial \bar{\psi} (z):: \psi(0) \partial\bar{\psi}(0): + : \bar{\psi}\partial \psi(z):: \psi(0) \partial\bar{\psi}(0):\\
+& + :\psi(z)\partial\bar{\psi}(z):: \bar{\psi}(0) \partial\bar{\psi}(0): + : \bar{\psi}(z)\partial\psi(z)::\bar{\psi}(0) \partial\psi(0):\Big]\\
+& \sim \frac{1}{4}\Big[\wick{:\c{\psi(z)} \partial\bar{\psi}(z)\psi(0)\c{\partial\bar{\psi}(0)}+: \psi(z)\c{\partial\bar{\psi}(z)} \c{\psi(0)} \partial\bar{\psi}(0): + : \c1{\psi(z)}\c2{\partial\bar{\psi}(z)} \c2{\psi(0)} \c1{\partial\bar{\psi}(0)} } \Big]\\
+&+\frac{1}{4}\Big[\wick{:\c{\bar\psi(z)} \partial\psi(z)\c{\psi(0)}\partial\bar{\psi}(0)+: \bar{\psi(z)}\c{\partial\psi(z)} \psi(0) \c{\partial\bar{\psi}(0)}: + : \c1{\bar{\psi(z)}}\c2{\partial\psi(z)} \c1{\psi(0)} \c2{\partial\bar{\psi}(0)} } \Big]\\
+&+\frac{1}{4}\Big[\wick{:\c{\psi(z)} \partial\bar{\psi(z)}\c{\bar\psi(0)}\partial\psi(0)+: \psi(z)\c{\partial\bar\psi(z)} \bar{\psi(0)} \c{\partial\psi(0)}: + : \c1{\psi(z)}\c2{\partial\bar\psi(z)} \c1{\bar\psi(0)} \c2{\partial\psi(0)} } \Big]\\
+&+\frac{1}{4}\Big[\wick{:\c{\bar{\psi(z)}} \partial\psi(z)\bar{\psi(0)}\c{\partial\psi(0)}+: \bar{\psi(z)}\c{\partial\psi(z)} \c{\bar\psi(0)} \partial\psi(0): + : \c1{\bar\psi(z)}\c2{\partial\psi(z)} \c2{\bar\psi(0)} \c1{\partial\psi(0)} } \Big]\\
+&\sim \frac{1/2}{z^4} + \frac{2T_\psi(0)}{z^2}+ \frac{\partial T_\psi(0)}{z}
 \end{aligned}
 \]
