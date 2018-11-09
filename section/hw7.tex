@@ -12,8 +12,8 @@ With commutation relation of Virasoro algebra, we have
 \begin{aligned}
 \lbrack L_1, L_{-1}L_{-2} \rbrack \big| \phi_I \rangle & = \lbrace \lbrack L_1, L_{-1} \rbrack L_{-2} + L_1 \lbrack L_1, L_{-2} \rbrack \rbrace \big| \phi_I \rangle\\
 &= \lbrace 2 L_0 L_{-2} + 3 L_{-1}^2 \rbrace \big| \phi_I \rangle \\
-& = \lbrace \lbrack L_0, L_{-2}\rbrack + L_{-2} L_0 + 3 L_{-1}^2 \rbrace \big| \phi_I \rangle\\
-& = \lbrace (2+ h_I )L_{-2} + 3 L_{-1}^2 \rbrace \big| \phi_I \rangle\\
+& = \lbrace 2\lbrack L_0, L_{-2}\rbrack + 2L_{-2} L_0 + 3 L_{-1}^2 \rbrace \big| \phi_I \rangle\\
+& = \lbrace 2(2+ h_I )L_{-2} + 3 L_{-1}^2 \rbrace \big| \phi_I \rangle\\
 \end{aligned}
 \]
 and 
@@ -31,14 +31,48 @@ Suppose the
 since $L_1 \big| \chi_I \rangle = 0$, we get equations
 
 \begin{eqnarray}
-4 \alpha + (2+ h_I) \beta =0\\
+4 \alpha + 2(2+ h_I) \beta =0\\
 \beta + 2h_I +2 =0 
 \end{eqnarray}
 The solution of this system is 
 \[
 \begin{aligned}
-\beta = -2(h_I +1) & & \alpha = \frac{(h_I + 1)(h_I + 2)}{2}
+\beta = -2(h_I +1) & & \alpha = (h_I + 1)(h_I + 2)
 \end{aligned}
+\]
+
+Now, we have 
+\[
+\big| \chi_I \rangle = \Big\lbrack (h_I + 1)(h_I +2) L_{-3} - 2 (h_I +1) L_{-1}L_{-2} + L_{-1}^3 \Big\rbrack \big| \phi_I \rangle
+\]
+Then, we write $L_{-3}, L_{-1}, L_{-2}$ into differential operators as
+\[
+\begin{aligned}
+\mathcal{L}_{-3} & = \sum_{i=1}^{N}\frac{2h_i}{(\omega_i - \omega)^3} - \frac{1}{(\omega_i - \omega)^2}\partial_{\omega_i} \\
+\mathcal{L}_{-2} & = \sum_{i=1}^{N} \frac{h_i}{(\omega_i - \omega)^2} - \frac{1}{\omega_i -\omega} \partial_{\omega_i}\\
+\mathcal{L}_{-1} &=-\sum_{i=1}^N\partial^3_{\omega_i}
+\end{aligned}
+\]
+We have following differential equations
+\[
+\Big\lbrack (h_I + 1)(h_I +2) \mathcal{L}_{-3} - 2 (h_I +1) \mathcal{L}_{-1}L_{-2} + \mathcal{L}_{-1}^3 \Big\rbrack \langle \phi_I(\omega) \phi_{\bar{I}}(z) \rangle
+\]
+In this case, we have
+\[
+\begin{aligned}
+\mathcal{L}_{-3} & = 
+\frac{2h_{\bar{I}}}{(z - \omega)^3} - \frac{1}{(z - \omega)^2}\partial_{z} \\
+\mathcal{L}_{-2} & = \frac{h_{\bar{I}}}{(z -\omega)^2} - \frac{1}{z -\omega} \partial_{z}\\
+\mathcal{L}_{-1} &=-\partial_{z}= \partial_{\omega}
+\end{aligned}
+\]
+so we further have 
+\[
+\mathcal{L}_{-1} \mathcal{L}_{-2} = - \mathcal{L}_{-3} - \frac{1}{z-\omega}\partial_{z}^2
+\]
+Take them into equation, we get
+\[
+\Big\lbrace\frac{2(h_I+1)(h_I +4)h_{\bar{I}}}{(z-\omega)^3} - \frac{(h_I +1)(h_I +4)}{(z-\omega)^2} \partial_{z} + \frac{2(h_I +1)}{z-\omega} \partial^2_{z} - \partial^3_z \Big\rbrace \langle \phi_I(\omega) \phi_{\bar{I}}(z) \rangle =0
 \]
 \section{Minimal models}
 The formula (5.40) implies for minimal model $\mathcal{M}_{2,2n+1}$, the central charge is 
@@ -48,40 +82,41 @@ c & = 1 - 6 \frac{(2-2n-1)^2}{2(2n+1)}\\
 & =  - \frac{2(6n-1)(n-1)}{2n+1}
 \end{aligned}
 \]
-And in this model, the formulas (5.44) and (5.45) becomes
+And in this model, the formulas (5.44) and (5.45) becomes as follows for fusion rule $\phi_{(r,s)} \times \phi_{(a,b)}$,
 \[
 k_{\text{max}} = \begin{cases}
-m+r -1 & \text{ if } m+r \leq 2n+2\\
-2(2n+1) -(m+r-1) & \text{ if } m+r > 2n+2\\
+a+r -1 & \text{ if } 2 \leq a+r \leq 2n+1\\
+2(2n+1) -(a+r-1) & \text{ if } 2n+1 < a+r \leq 4n\\
 \end{cases}
 \]
 and 
 \[
-l_{\text{max}} = \begin{cases}
-3-(s+n) & \text{ if } s+n \geq 2\\
-s+n-1& \text{ if } s+n = 1 \\
-\end{cases}
-\]
-Hence we get $(s,n)= (1,1)$ since $l_{\text{max}} \geq 1$. And we also have $2 \leq m+r \leq 6$. So $(m,r)$ has following possibilities
-\[
 \begin{aligned}
-k_{\text{max}}= 1:\ &(1,1) & &\\
-k_{\text{max}}= 2:\ &(1,2) & &\\
-k_{\text{max}}= 3:\ &(1,3) &(2,2)&\\
-k_{\text{max}}= 2:\ &(1,4) & (2,3)&\\
-k_{\text{max}}= 1:\ &(1,5) & (2,4) &\ (3,3)\\
+l_{\text{max}} = 1& &(s,b)=(1,1)
 \end{aligned}
 \]
 So we have fusion rules
 \[
 \begin{aligned}
- &\phi_{(1,1)} \times \phi_{(1,1)} = \phi_{(1,1)}\\
- & \phi_{(1,1)} \times \phi_{(2,1)} = \phi_{(2,1)}\\
- & \phi_{(2,1)} \times \phi_{(2,1)} = \phi_{(1,1)} + \phi_{(3,1)}\\
- & \phi_{(1,1)} \times \phi_{(3,1)} = \phi_{(3,1)}\\
- & \phi_{(1,1)} \times \phi_{(4,1)} = \phi_{(4,1)} \\
- & \phi_{(2,1)} \times \phi_{(3,1)} = \phi_{(2,1)} \\
- & \phi_{(1,1)} \times \phi_{(5,1)} = \phi_{(5,1)} \\
- & \phi_{(2,1)} \times \phi_{(4,1)} = \
+ \phi_{(r,s)} \times \phi_{(a,b)} & = \phi_{(r,1)} \times \phi_{(a,1)} \\
+ & = \sum_{k=1+|r-a|,k+r+a =1 \mod 2}^{k_{\text{max}}} \phi_{(k,1)}
+\end{aligned}
+\]
+If $2 \leq r+a \leq 2n+1$, then we have
+\[
+\sum_{k=1+|r-a|,k+r+a =1 \mod 2}^{r+a-1} \phi_{(k,1)} = \sum_{j=0}^{a-1} \phi_{(r-a+1 + 2j,1)}
+\]
+If $2n+1 < r+a \leq 4n$, then we have 
+\[
+\sum_{k=1+|r-a|,k+r+a =1 \mod 2}^{4n+1-(r+a)} \phi_{(k,1)} = \sum_{j=0}^{2n-r} \phi_{(r-a+1 + 2j,1)}
+\]
+\section{Star-triangle relation}
+To derive eq2, we have 
+\[
+\begin{aligned}
+2 \cosh(L \sigma_i + L(\sigma_j + \sigma_k)) & = 2(\cosh(L\sigma_i)\cosh(L(\sigma_j + \sigma_k)) + \sinh(L\sigma_i) \sinh(L(\sigma_j + \sigma_k)) )\\
+& = 2\cosh L (\cosh L \cosh L + \sigma_j\sigma_k \sinh L \sinh L) \\
+&+ 2\sigma_i \sinh L (\sigma_j\sinh L \cosh L + \sigma_k\cosh L \sinh L )\\
+& = 2\cosh^3 L + 2\cosh L \sinh^2 L \Big\lbrack \sigma_i \sigma_j + \sigma_i \sigma_k + \sigma_j \sigma_k \Big \rbrack
 \end{aligned}
 \]
