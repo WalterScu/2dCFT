@@ -1,6 +1,8 @@
 % !TEX root=../main.tex
 % !TEX program=lualatex
-\section{Null states at level 3}
+\newpage
+\section{Homework 7}
+\subsection{Null states at level 3}
 With commutation relation of Virasoro algebra, we have
 \[
 \begin{aligned}
@@ -74,7 +76,7 @@ Take them into equation, we get
 \[
 \Big\lbrace\frac{2(h_I+1)(h_I +4)h_{\bar{I}}}{(z-\omega)^3} - \frac{(h_I +1)(h_I +4)}{(z-\omega)^2} \partial_{z} + \frac{2(h_I +1)}{z-\omega} \partial^2_{z} - \partial^3_z \Big\rbrace \langle \phi_I(\omega) \phi_{\bar{I}}(z) \rangle =0
 \]
-\section{Minimal models}
+\subsection{Minimal models}
 The formula (5.40) implies for minimal model $\mathcal{M}_{2,2n+1}$, the central charge is 
 \[
 \begin{aligned}
@@ -110,7 +112,7 @@ If $2n+1 < r+a \leq 4n$, then we have
 \[
 \sum_{k=1+|r-a|,k+r+a =1 \mod 2}^{4n+1-(r+a)} \phi_{(k,1)} = \sum_{j=0}^{2n-r} \phi_{(r-a+1 + 2j,1)}
 \]
-\section{Star-triangle relation}
+\subsection{Star-triangle relation}
 To derive eq2, we have 
 \[
 \begin{aligned}
@@ -120,3 +122,24 @@ To derive eq2, we have
 & = 2\cosh^3 L + 2\cosh L \sinh^2 L \Big\lbrack \sigma_i \sigma_j + \sigma_i \sigma_k + \sigma_j \sigma_k \Big \rbrack
 \end{aligned}
 \]
+To derive eq3, we first notice that 
+\[
+\exp(K \lbrack \sigma_i \sigma_j + \sigma_j \sigma_k + \sigma_k \sigma_i \rbrack) = \cosh(K \lbrack \sigma_i \sigma_j + \sigma_j \sigma_k + \sigma_k \sigma_i \rbrack ) + \sinh (K \lbrack \sigma_i \sigma_j + \sigma_j \sigma_k + \sigma_k \sigma_i \rbrack)
+\]
+Similarly, we have 
+\[
+\begin{aligned}
+\cosh(K \lbrack \sigma_i \sigma_j + \sigma_j \sigma_k + \sigma_k \sigma_i \rbrack ) &= \cosh^3 K + \cosh K \sinh^2 K \Big\lbrack \sigma_i^2 \sigma_j \sigma_k + \sigma_i \sigma_j^2 \sigma_k + \sigma_i \sigma_j \sigma_k^2 \Big \rbrack\\
+& = \cosh^3 K + \cosh K \sinh^2 K \Big\lbrack \sigma_i \sigma_j + \sigma_i \sigma_k + \sigma_j \sigma_k \Big \rbrack
+\end{aligned}
+\]
+and 
+\[
+\begin{aligned}
+& \sinh (K \lbrack \sigma_i \sigma_j + \sigma_j \sigma_k + \sigma_k \sigma_i \rbrack ) \\
+& = \sinh(K\sigma_i \sigma_j) \cosh (K\lbrack \sigma_j \sigma_k + \sigma_k \sigma_i \rbrack) + \cosh K \sinh ( K \lbrack \sigma_j \sigma_k + \sigma_k \sigma_j \rbrack)\\
+& = \sigma_i \sigma_j \sinh K ( \cosh^2 K + \sigma_i \sigma_k^2 \sigma_j \sinh^2 K) + \sigma_j \sigma_k \cosh^2 K \sinh K  + \sigma_k \sigma_j \cosh^2 K \sinh K \\
+& =\sinh^3 K + (\sigma_i \sigma_j + \sigma_j \sigma_k + \sigma_k \sigma_j) \sinh K \cosh^2 K
+\end{aligned}
+\]
+sum the two equations, then we get eq3.

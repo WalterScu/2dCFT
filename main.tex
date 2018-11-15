@@ -12,8 +12,15 @@
 \usepackage[colorlinks]{hyperref}
 \usepackage{tikz-cd}
 \usepackage{geometry}
+\usepackage{fancyhdr}
 \geometry{left=2cm,right=1cm, top=3cm,bottom=2cm}
 \usepackage{simplewick}
+\usepackage{fourier-orns}
+\renewcommand\headrule{\hrulefill \raisebox{-2.1pt}[10pt][10pt]{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
+\pagestyle{fancy}
+\lhead{邹海涛} 
+\rhead{17210180015}
 \theoremstyle{definition}
 \newtheorem{secdefn}{Definition}[subsection]
 \newtheorem{exer}{Exercies}[subsection]
@@ -450,5 +457,6 @@ Hence we have
 It is equal to $\{\omega, z\}$.
 \input{section/num4.tex}
 \input{section/hw7.tex}
+\input{section/hw8.tex}
 \end{document}
 
