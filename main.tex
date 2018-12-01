@@ -29,6 +29,7 @@
 \DeclareMathOperator{\res}{Res}
 \DeclareMathOperator{\im}{Im}
 \DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\D}{d}
 \begin{document}
 \noindent
 {\LARGE\underline{\textbf{2d CFT}}}\\
@@ -36,7 +37,7 @@
 	\hfill ID: 17210180015}\\
 %\normalsize ECE 100-003 \hfill Teammates: Student1, Student2 \\
 %TA: Adam Sumner \hfill Due Date: XX/XX/XX
-\section*{Week 1}
+\section{Homework 1}
 \begin{exer}
 	The first order transitions and second order transitions show in the diagram
 	\begin{figure}[h]
@@ -120,11 +121,8 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 	With listed commutation relations, we can easily check it coincides with (2,25) respectively. Similarly check in the case of $(m,n)= (0,n)$. 
 \end{exer}
 \newpage
-\noindent
-{\LARGE\underline{\textbf{2d CFT} (Week 3)}}\\
-{\hfill\large  \underline{\textbf{邹海涛}} \\
-	\hfill ID: 17210180015}\\
-\section{$SL_2(\mathbb{C})$}
+\section{Homework 2}
+\subsection{$SL_2(\mathbb{C})$}
 \begin{exer}
 	We have $\det X = t^2-(x^2+y^2+z^2)$. Since points in $\mathbb{R}^{1,3}$ can be written with Pauli matrix as base. Elements in $SO(1,3)$ can be viewed as action on $M_2(\mathbb{C})$ with form $P \mapsto PXP^*$, which preserve det of $X$.
 	We have exact sequence of groups as follows:
@@ -148,7 +146,7 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 		Hence we have $[z_1,z_2,z_3,z_4]=[w_1,w_2,w_3,w_4]$.
 	\end{itemize}
 \end{exer}
-\section{Three-point function}
+\subsection{Three-point function}
 \begin{exer}
 	Let $\langle\phi_1(z_1)\phi_2(z_2)\phi_3(z_3)\rangle =f(z_{12},z_{23},z_{13})$. Under scalar transformation $z_i \mapsto \lambda z_i$, we have
 	\[
@@ -165,7 +163,7 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 	\]
 	Hence $a= h_1 +h_2 -h_3, b=h_2 + h_3 -h_1, c= h_1 +h_3 - h_2$.
 \end{exer}
-\section{Energy-momentum tensor}
+\subsection{Energy-momentum tensor}
 \begin{exer}
 	\begin{itemize}
 		\item \[
@@ -185,12 +183,9 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 	\end{itemize}
 \end{exer}
 \newpage
-\noindent
-{\LARGE\underline{\textbf{2d CFT}}}\\
-{\hfill\large  \underline{\textbf{邹海涛}} \\
-	\hfill ID: 17210180015}\\
-\section{Derivations}
-	\subsection{Energy-momentum tensor in complex coordinate}
+\section{Homework 4}
+\subsection{Derivations}
+	\subsubsection{Energy-momentum tensor in complex coordinate}
 	Since 
 	\[
 	\begin{aligned}
@@ -233,7 +228,7 @@ since it is non-zero, we have $d- y_n - y_n \frac{1}{\delta}=0$. Hence we have
 	&T_{z\bar{z}} =T_{\bar{z}z}= \frac{1}{4} (T_{00} + T_{11})\\
 	\end{aligned}
 	\]
-\subsection{Schwarzian derivative}
+\subsubsection{Schwarzian derivative}
 \[
 \tilde{T}(z+\epsilon(z)) = (1+ \partial_z \epsilon(z))^{-2}\Big[T(z)- \frac{c}{12}\big(\frac{\partial_z^3\epsilon(z)}{1+\partial_z\epsilon(z)}-\frac{2}{3} \frac{\partial_z^2 \epsilon(z)}{1+\partial_z \epsilon(z)}\big)\Big]
 \]
@@ -253,7 +248,7 @@ Hence
 \tilde{T}(z+ \epsilon(z)) - \big[\epsilon(z)\partial_z T(z) +T(Z)\big] \approx -\frac{c}{12} \partial^3_z\epsilon(z) - 2 \partial_z\epsilon(z)T(z) -\epsilon(z)\partial_z T(z) 
 \]
 It implies that $\delta_\epsilon(T(z)) = -\frac{c}{12} \partial^3_z\epsilon(z) - 2 \partial_z\epsilon(z)T(z) -\epsilon(z)\partial_z T(z) $.
-\subsection{Virasoro algebra}
+\subsubsection{Virasoro algebra}
 The Larrent expansion of $z^{n+1}$ around $\omega$ is 
 \[
 z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \binom{n+1}{i}\omega^i (z-\omega)^{n+1 -i} +\cdots + \omega^{n+1}
@@ -275,7 +270,7 @@ z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \bino
  &= \frac{c}{12} n (n^2-1) \delta_{n+m,0} - (m-n) L_{n+m}
   \end{aligned}
   \]
- \subsection{Commutation relations in free boson}
+ \subsubsection{Commutation relations in free boson}
  We have 
  \[
  \varphi = \varphi_0 + \frac{4\pi}{l} \pi t + i \sum_{n \neq 0} \frac{1}{n} \Big( a_n e^{-2 \pi in (t-x)/l} + \bar{a}_n e^{-2 \pi n (t+x)/l}\Big)
@@ -302,7 +297,7 @@ z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \bino
   \]
   Since $e^{2 \pi i (n(x+y))/l}$ is independent of $x-y$, then its coefficient is zero. Hence $[a_n, \bar{a}_{-n}]=0$.
   Take integral of both left and right side, we can get $[\varphi_0, \pi_0] = i$ and $[a_n, a_{-n}] = [\bar{a}_n, \bar{a}_{-n}] = 1$.
- \subsection{Action of free fermion}
+ \subsubsection{Action of free fermion}
  \[
  S = \frac{1}{4\pi} \int d^2 x \psi^\dagger \gamma^0(\gamma^0 \partial_0 \psi + \gamma^1 \partial_1 \psi)
  \]
@@ -322,7 +317,7 @@ z^{n+1}= (z- \omega)^{n+1} + \binom{n+1}{1} \omega (z-\omega)^n + \cdots + \bino
  \[
 	S = \frac{1}{2\pi} \int d^2 x (\bar{\varphi} \partial_{z} \bar{\varphi} +  \varphi \partial_{\bar{z}} \varphi)
  \]
- \subsection{$TT$ OPE in free fermion}
+ \subsubsection{$TT$ OPE in free fermion}
 By derivative, we get 
 \[
 \begin{aligned}
@@ -345,7 +340,7 @@ T(z)T(\omega) &= \frac{1}{4} : \psi(z) \partial_z \psi(z) :: \psi(\omega) \parti
 &\sim \frac{1}{4} \big\{\frac{2 \partial_\omega T(\omega)}{z-\omega} + \frac{4T(\omega)}{(z-\omega)^2} + \frac{1}{(z-\omega)^4}  \big\}
 \end{aligned}
 \]
-\section{Vertex operator and OPE}
+\subsection{Vertex operator and OPE}
 If we write $\varphi(z,\bar{z})$ into laurent series since $\varphi$ is free boson, then we can find $\exp(ik \varphi)$ is product of infinite exponential components which are commutative. Hence the normal ordering has taylor expansion form
 \[
 :\exp(ik \varphi(z,\bar{z})): = \sum_{n=0}^{\infty} \frac{(ik)^n}{n!}: \varphi(z,\bar{z})^n:
@@ -360,7 +355,7 @@ T(z):\exp{ik \varphi(\omega,\bar{\omega})}:& = - \frac{1}{2} \sum_{n=0}^{\infty}
 \end{aligned}
 \]
 This form implies that $:\exp(ik\varphi):$ is primary field with conformal dimension $\frac{k^2}{2}$.
-\section{$bc$ ghost system}
+\subsection{$bc$ ghost system}
  \[
  \begin{aligned}
  T(z) b(\omega) & = (-2: b(z) \partial c(z): + :c(z) \partial b(z):) b(\omega)\\
@@ -427,7 +422,7 @@ Hence conformal dimension of $c$ is $-1$.
  T(z)T(\omega) \sim -\frac{13}{(z-\omega)^4} + \frac{2T(\omega)}{(z-\omega)^2} + \frac{\partial T(\omega)}{z-\omega}
  \]
  So the central charge is equal to $-26$.
-\section{Schwarzian derivatives}
+\subsection{Schwarzian derivatives}
 Let $\omega = \frac{az+b}{cz +d}$, then
 \[
 \begin{aligned}
@@ -459,5 +454,6 @@ It is equal to $\{\omega, z\}$.
 \input{section/num4.tex}
 \input{section/hw7.tex}
 \input{section/hw8.tex}
+\input{section/hw9.tex}
 \end{document}
 
