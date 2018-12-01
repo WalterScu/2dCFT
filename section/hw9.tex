@@ -126,6 +126,15 @@ Hence
 	& = h(-m-1)J^a_{n+m} + \frac{i}{k+2}\epsilon^a_{bc}(J^b J^c)_{n+m+1}
 	\end{split}
 \end{equation}
+Now we compute the TT OPE 
+\begin{equation}
+\begin{split}
+T(z)T(w)&= \frac{1}{(k+2)^2} \sum_{a=1,b=1}^3 :J^aJ^a(z)::J^bJ^b(w):\\
+&\sim \frac{1}{(k+2)^2} \sum_{a=1,b=1}^3 \left\{4: \wick{J^a(z)\c{J^a(z)}\c{J^b(w)} J^b(w): + \c1{J^a(z)} \c2{J^a(z)} \c2{J^b(w)} \c1{J^b(w)}  } \right\} \\
+&\sim \frac{1}{(k+2)^2} \sum_{a=1,b=1}^3 \frac{k^2/4 \delta^{ab}}{(z-w)^4} + \frac{ik \delta^{ab}\epsilon^{ab}_c J^c(w)}{(z-w)^3} + \frac{2k \delta^{ab}J^a(z) + \cdots}{(z-w)^2}
+\end{split}
+\end{equation}
+Hence its central charge is $\frac{3k^2}{2(k+2)^2}$.
 \subsection{Wakimoto construction}
 For bosonic field $a(z)$ we have
 \begin{equation}
@@ -232,3 +241,82 @@ and
 	\end{split}
 \end{equation}
 Now, we can conclude that their conformal dimension are all $1$.
+Next, we compute the TT OPE of this energy-momentum tensor
+\begin{equation}
+	\begin{split}
+	T(z)T(w) & = \frac{1}{\kappa}\left\{a(z)^2 - a'(z) \right\}+ \beta(z) \gamma'(z)::\frac{1}{\kappa} \left\{a(w)^2 -a'(w) \right\} + \beta(w) \gamma'(w):\\
+	& \sim 
+	\frac{1}{\kappa^2}:: a(w)^2 -a'(w): + : \beta(z)\gamma'(z):: \beta(w) \gamma'(w): \\
+	& \sim \frac{2}{\kappa} \frac{:a(z)a(w):}{(z-w)^2} + \frac{1}{4} \frac{1}{(z-w)^4}  - \frac{-3}{\kappa} \frac{1}{(z-w)^4} + \frac{:\beta(z)\gamma'(w)}{(z-w)^2} + \frac{:\gamma'(z)\beta(w):}{(z-w)^2} + \frac{1}{(z-w)^4}\\
+	& + \frac{2}{\kappa} \frac{a(w)}{(z-w)^3} - \frac{2}{\kappa}\frac{a(z)}{(z-w)^3}\\
+	& \sim \frac{5/4 - 3/\kappa}{(z-w)^4} + \frac{2}{\kappa}\frac{a(w)-a(z)}{(z-w)^3} + \frac{\frac{2}{\kappa} : a(z)a(w): + :\beta(z)\gamma'(w): + \gamma'(z)\beta(w)}{(z-w)^2}\\
+	& \sim \frac{5/4 - 3/\kappa}{(z-w)^4} + \frac{2T(w)}{(z-w)^2} - \frac{\partial_w T(w)}{z-w}
+	\end{split}
+\end{equation}
+So its central charge is $\frac{5}{2} - \frac{6}{\kappa}$.
+Next, we calculate the OPE of $T$ and $V_\alpha$ to compute conformal dimension of $V_\alpha(z)$.
+\begin{equation}
+	\begin{split}
+	T(z)V_\alpha(w)& = T(z): \exp \left(i\alpha \sqrt{2/\kappa} \varphi(w) \right): \\
+	&\sim \wick{i \alpha \sqrt{\frac{2}{\kappa}}\c1{T(z)} \c1{\varphi(w)} : \exp\left(i \alpha \sqrt{2/\kappa}\varphi(w) \right): }
+	\end{split}
+\end{equation}
+because there is relation
+\[
+\wick{ \c{T(z)} :\c{\exp(A(w))}: = \c{T(z)} \c{A(z)} : \exp(A(z)) }
+\]
+Therefore, we just need to calculate $T(z)\varphi(w)$
+\begin{equation}
+	\begin{split}
+	T(z)\varphi(w)& = \frac{1}{\kappa}: \left\{a(z)^2 - a'(z) \right\} \varphi(w)\\
+	&\sim \wick{\frac{2}{\kappa} : a(z) \c{a(z)} : \c{\varphi(w)} - \frac{1}{\kappa}: \c{a'(z)}: \c{\varphi(w)} } \\
+	& \sim - i \sqrt{\frac{2}{\kappa}}\left\{ \frac{a(z)}{z-w} + \frac{1/2}{(z-w)^2}  \right\}
+	\end{split}
+\end{equation}
+Hence
+\begin{equation}
+	\begin{split}
+	T(z)V_\alpha(w) & \sim \frac{2\alpha/\kappa V_\alpha (w)a(w)}{z-w} + \frac{\alpha/\kappa V_\alpha(w)}{(z-w)^2}
+	\end{split}
+\end{equation}
+Hence conformal dimension of $V_\alpha$ is $\alpha/\kappa$.
+\subsubsection{}
+\begin{equation}
+	E(z)V_{\alpha=-1}(w) = \beta(z)\exp{-i \sqrt{2/k} \varphi(w)}\beta(w) \sim 0
+\end{equation}
+\begin{equation}
+\begin{split}
+	H(z)V_{\alpha =-1}(w) &= \left\{ -: \gamma(z)\beta(z): + a(z) \right\}: e^{-i \sqrt{2/\kappa} \varphi(w)}\beta(w):\\
+	& \sim \wick{- : \c{\gamma(z)}\beta(z) \exp(-i\sqrt{2/k}) \c{\beta(w)}: + \c{a(z)} : \c{\exp(-i \sqrt{2/k} \varphi(w))} \beta(w): }\\
+	& \sim \frac{\beta(z) \exp( -i \sqrt{2/\kappa}\varphi(w) )}{z-w} + \frac{- \exp(-i\sqrt{2/\kappa} \varphi(w))\beta(w)}{z-w}\\
+	& \sim 0
+\end{split}
+\end{equation}
+and
+\begin{equation}
+	\begin{split}
+	H(z)V_{\alpha=-1} &= - : \gamma(z)^2 \beta(z): e^{-i \sqrt{2/\kappa}\varphi(w)} \beta(w) + 2\gamma(z)a(z) e^{-i \sqrt{2/\kappa}\varphi(z)} \beta(w) + k \gamma'(z) e^{i \sqrt{2/\kappa}\varphi(w)} \beta(w)\\
+	& \sim -2 \wick{:\gamma(z) \c{\gamma(z)} \beta(z): \c{\beta(w)} e^{-i\sqrt{\frac{2}{\kappa}}} + 2 \c{\gamma(z)} a(z) \exp(-i \sqrt{2/\kappa} \varphi(w)) \c{\beta(z)}}\\
+	& + \wick{\gamma(z) \c{a(z)} \c{\exp(-i \sqrt{2/\kappa}\varphi(w))} \beta(w) + \c1{\gamma(z)} \c2{a(z)} \c2{\exp(-i \sqrt{2/\kappa}\varphi(w))} \c1{\beta(w)} + k \c{\gamma'(z)} \c{\beta(w)}e^{-i \sqrt{2/\kappa}\varphi(w)} }\\ 
+	& \sim \frac{(k+2)e^{-i \sqrt{2/\kappa} \varphi(w)}}{(z-w)^2} - \frac{2 a(w) e^{-i \sqrt{2/\kappa}\varphi(w)}}{z-w}
+	\end{split}
+\end{equation}
+and 
+\begin{equation}
+	\begin{split}
+	T(z)V_{\alpha=-1} & = T(z)V_{-1}(w)\beta(w)\\
+	& \sim \wick{ \c{T(z)} \c{V_{-1}(w)} \beta(w) + \c{T(z)}V_{-1}(w) \c{\beta(w)} }\\
+	& \sim \frac{\partial_w (V_{\alpha =-1})}{z-w} + \frac{(1-1/\kappa)V_{\alpha=-1}(w)}{(z-w)^2}
+	\end{split}
+\end{equation}
+Next, we only need to prove $[L_n, V_{\alpha=-1}]=0$.
+
+However
+\begin{equation}
+	\begin{split}
+	[L_n,V_{\alpha=-1}] &= \frac{1}{2\pi i}\int_0 \D w \int_w \D z z^{n+1} T(z) V_{\alpha=-1}(w)\\
+	&= \int_0 \D w \partial_w \left(w^{n+1}V_{\alpha=-1}(w) \right) - \frac{n+1}{\kappa}V_{\alpha=-1}(w)\\
+	&=0
+	\end{split}
+\end{equation}
+Hence $V_{\alpha=-1}$ is screening current.
