@@ -1,0 +1,98 @@
+% !TEX root=../main.tex
+% !TEX program=luatex
+\newpage
+\section{Homework 10}
+\subsection{Derivation}
+
+\subsection{Solutions to KZ equations}
+\subsubsection{}
+All possible generators of $\square^{\otimes2}$ is 
+\[
+\begin{aligned}
+|+,+\rangle & & |+,- \rangle & & |-,+\rangle & & |-,-\rangle
+\end{aligned}
+\]
+since we have anti-symmetry relation $|+,-\rangle = -|-,+\rangle$, $|+,-\rangle$ is the generator of trivial one-dimensional representation $\mathbf{1}$. And ${\tiny\yng(2)}$ is 2-dimensional representation with generators $|+,+\rangle$ and $|-,-\rangle$.
+
+Let us consider the generator of ${\tiny\yng(2)} \otimes {\tiny\yng(1)}$. It has generator
+\[
+\begin{aligned}
+&|+,+,+\rangle& & |-,-,+\rangle& & |+,-,+\rangle\\
+&|+,+,-\rangle& & |-,-,-\rangle& & |+,-,-\rangle
+\end{aligned}
+\]
+since $|-,-,+\rangle \sim |+,-,-\rangle \sim |-\rangle$ and $|+,-,+ \rangle \sim |+,+,-\rangle \sim |+\rangle$,, where $\sim$ means linear equivalence, we can conclude that 
+\begin{equation}
+	{\tiny\yng(2)} \otimes {\tiny\yng(1)} \cong {\tiny\yng(3)} \oplus {\tiny\yng(1)}
+\end{equation}
+Hence
+\begin{equation}
+	(\square)^{\otimes 3} \cong \left( {\tiny\yng(2)} \oplus \mathbf{1} \right) \otimes {\tiny\yng(1)} \cong {\tiny\yng(3)} \oplus {\tiny\yng(1)} \oplus {\tiny\yng(1)}
+\end{equation}
+\begin{equation}
+	\begin{split}
+	(\square)^{\otimes 4} &\cong \left({\tiny\yng(3)} \otimes {\tiny\yng(1)}\right) \oplus {\tiny\yng(2)}^{\oplus 2} \oplus \mathbf{1}^{\oplus 2}\\
+	&\cong {\tiny\yng(4)} \oplus {\tiny\yng(2)}^{\oplus 3} \oplus \mathbf{1}^{\oplus 2}
+	\end{split}
+\end{equation}
+and
+\begin{equation}
+	\begin{split}
+	(\square)^{\otimes 5} &\cong \left({\tiny\yng(4)} \otimes {\tiny\yng(1)}\right) \oplus \left({\tiny\yng(2)} \otimes {\tiny\yng(1)}\right)^{\oplus 3} \oplus {\tiny\yng(1)}^{\oplus 2}\\
+	&\cong {\tiny\yng(5)} \oplus {\tiny\yng(3)}^{\oplus 4} \oplus {\tiny\yng(1)}^{\oplus 5}
+	\end{split}
+\end{equation}
+\subsubsection{}
+\subsubsection{}
+The KZ equations 
+\begin{equation}
+	\left[ \partial_{z_1} + \frac{2}{k+2} \sum^n_{j=2} \frac{\Omega_{1j}}{z_1 - z_j} \right] \Phi_{\frac{n-2}{2}} (z_1, \cdots, z_n) =0
+\end{equation}
+We have 
+\begin{equation}
+	\begin{split}
+	\partial_{z_1} \Phi_{\frac{n-2}{2}} & = \partial_{z_1} \psi_0 \sum_{i\geq 1}^{n} \psi_i |v_i \rangle\\
+		& = \left( \partial_{z_1} \psi_0 \right) \sum_{i \geq 1}^n \psi_i |v_i \rangle + \psi_0 \partial_{z_1}\left( \sum_{i \geq 1}^{n} \psi_i |v_i \rangle \right)\\
+	\end{split}
+\end{equation}
+Since we have 
+\begin{equation}
+\partial_{z_1 } \psi_0 = - \frac{2}{k+2} \sum_{j \geq 2} \frac{1/4}{z_1 -z_j} \sum_{i \geq 1}^n \psi_i
+\end{equation}
+we have 
+\begin{equation}
+\begin{split}
+ \partial_{z_1} \Phi_{\frac{n-2}{2}} = \psi_0 \left\{ - \frac{2}{k+2} \sum_{j \geq 2}^n \frac{1/4}{z_1 - z_j}  + \partial_{z_1} \right\}\sum_{i \geq 1}^n \psi_i |v_i \rangle
+\end{split}
+\end{equation}
+if $\psi_0 \neq 0$, they reduce
+\begin{equation}
+\label{eq67}
+	\left[ \partial_{z_1} + \frac{2}{k+2} \sum^n_{j=2} \frac{\Omega_{1j}-1/4 }{z_1 - z_j} \right] \sum_{i=1}^{n}\psi_i(z)|v_i \rangle
+\end{equation}
+
+In general, the result in previous part implies
+\[
+\Omega_{ij} = \frac{1}{2}(s_{ij} -\frac{1}{2}) \text{ if }  i \neq j
+\]
+In particular, we have 
+\begin{eqnarray}
+& \Omega_{1j} \left| v_1 \right\rangle = \frac{1}{2}| v_j\rangle - \frac{1}{4}\left| v_1 \right\rangle \\
+& \Omega_{1j} \left| v_j \right\rangle = \frac{1}{2}|v_1 \rangle - \frac{1}{4}|v_j\rangle 
+\end{eqnarray}
+Therefore, the coefficient of $|v_1 \rangle$  of $\ref{eq67}$ is 
+\begin{equation}
+	\partial_{z_1 } \psi_1 + \frac{2}{k+2} \sum_{j=2}^n \frac{-1/2 \psi_1}{z_1 -z_j} + \frac{2}{k+2} \sum_{j=2}^n \frac{1/2 \psi_j}{z_1 - z_j}
+\end{equation}
+where the middle term comes form $\Omega_{1j} |v_1\rangle$ and the last term comes from $\Omega_{1j} |v_j \rangle$. The KZ equations implies this coefficient is equal to zero. Hence
+\begin{equation}
+	(k+2) \partial_{z_1} \psi_1 + \sum_{j=2}^n \frac{\psi_j - \psi_1}{z_1 - z_j} =0 
+\end{equation}
+Similarly, the coefficient of \ref{eq67} is 
+\begin{equation}
+	\partial_{z_1} \psi_2 + \frac{2}{k+2} \frac{1/2 \psi_1}{z_1 - z_2} + \frac{2}{k+2} \frac{-1/2 \psi_2}{z_1 - z_2}
+\end{equation}
+The middle term comes from $\Omega_{12} | v_1 \rangle$ and the last term comes from $\Omega_{12} | v_2 \rangle$. Therefore, we get
+\begin{equation}
+(k+2) \partial_{z_1} \psi_2 + \frac{\psi_1 - \psi_2}{z_1 - z_2} =0
+\end{equation}
