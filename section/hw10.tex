@@ -3,7 +3,25 @@
 \newpage
 \section{Homework 10}
 \subsection{Derivation}
-
+\[
+ \Gamma = \frac{-i}{12 \pi} \int_B \D^3 y \epsilon_{\alpha\beta\gamma} \tr( \tilde{g}^{-1} \partial^a \tilde{g} \tilde{g}^{-1} \partial^{\beta} \tilde{g} \tilde{g}^{-1} \partial^\gamma \tilde{g})
+\]
+we have with integration by parts
+\begin{equation}
+	\begin{split}
+	\Gamma & = \frac{-i}{12 \pi} \int_B \D^3 y \epsilon_{\alpha\beta\gamma} \tr\left( \tilde{g}^{-1} \partial^\gamma \left( \partial^\alpha \tilde{g} \tilde{g}^{-1} \partial^\beta \tilde{g}\right) \right) + \frac{i}{4\pi} \int_\Sigma \D^3 x \epsilon_{\mu \eta} \tr \left( \partial^{\mu} \tilde{g} \tilde{g}^{-1} \partial^{\eta} \tilde{g} \tilde{g}^{-1} \right)\\
+	& =  \frac{-i}{12 \pi} \int_B \D^3 y \epsilon_{\alpha\beta\gamma} \tr\left( \tilde{g}^{-1} \partial^\gamma \left( \partial^\alpha \tilde{g} \tilde{g}^{-1} \partial^\beta \tilde{g}\right) \right) - \frac{i}{4 \pi} \int_{\Sigma} \D^2 x \epsilon_{\mu\eta} \tr\left( \partial^{\mu} g \partial^{\eta} g^{-1}\right)
+	\end{split}
+\end{equation}
+The second term is independent of $g$, therefore the derivative by $g$ is
+\begin{equation}
+	\begin{split}
+	\delta \Gamma & = \frac{i}{4\pi} \int_{\Sigma}\D^2 x \epsilon_{\mu\eta} \tr \left(\delta g^{-1} \partial^{\mu} g g^{-1} \partial^{\mu} g \right)\\
+	& = \frac{-i}{4\pi} \int_{\Sigma} \D^2 x \epsilon_{\mu\eta} \tr \left( \delta g^{-1} g \partial^{\mu} (g^{-1} \partial^{\mu} g) \right)\\
+	& = \frac{i}{4\pi} \int_{\Sigma} \D^2 x \epsilon_{\mu\eta} \tr \left(  g^{-1} \delta g \partial^{\mu} (g^{-1} \partial^{\mu} g) \right)
+	\end{split}
+\end{equation}
+with $\delta(g g^{-1})=0$.
 \subsection{Solutions to KZ equations}
 \subsubsection{}
 All possible generators of $\square^{\otimes2}$ is 
