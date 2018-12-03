@@ -62,6 +62,18 @@ and
 \end{equation}
 \subsubsection{}
 \subsubsection{}
+The equations for $\Phi_{\frac{n}{2}}$ implies
+\begin{equation}
+	\left(\partial_{z_i} + \frac{2}{k+2}\sum_{j\neq i}^n \frac{1/4}{z_i - z_j} \right) \psi_0(z_1, \cdots, z_n) |+,\cdots,+\rangle
+\end{equation}
+since $\Omega_{ij}$ acts on highest-weight state $|+, \cdots,+\rangle$ is just $1/4$. Therefore
+\begin{equation}
+	\psi_0 (z_1,\cdots, z_i, \cdots, z_n) = \frac{1}{2\pi i } \int_{z_i} (t-z_i) \partial_{t}\psi_0(z_1,\cdots, t,\cdots, z_n)
+\end{equation}
+Hence 
+\begin{equation}
+	\psi_0(z_1,\cdots,z_n) = \frac{1}{2\pi i} \frac{1/2}{k+2}\int_{z_i} \sum_{j\neq i} \frac{t-z_i}{z_i -z_j}
+\end{equation}
 The KZ equations 
 \begin{equation}
 	\left[ \partial_{z_1} + \frac{2}{k+2} \sum^n_{j=2} \frac{\Omega_{1j}}{z_1 - z_j} \right] \Phi_{\frac{n-2}{2}} (z_1, \cdots, z_n) =0
