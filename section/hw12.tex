@@ -23,6 +23,35 @@ where $\theta \neq k \pi $. Let $\alpha = \sin^2(\theta)$, then $\alpha \in (0, 
 \end{equation} 
 It decreases at $(0, 1]$ and reach zero at point $\alpha = e^{-1}$. Therefore, $S_A$ reaches the maximal value at $\alpha= e^{-1}$, i.e., $\theta =\pm \arcsin e^{-1/2}+ 2k\pi$.
 \subsubsection{Entanglement entropy of harmonic oscillators}
+With commutation relation $[a, a^{\dag}]=1$ , we can compute as follows
+\begin{equation}
+	\begin{split}
+	a(a^{\dagger}\tilde{b}^{\dagger})^k &= (1+ a^{\dagger})(a^{\dagger})^{k-1}(\tilde{b}^{\dagger})^{k} \\
+	&= 2(a^{\dagger})^{k-1}(\tilde{b}^{\dagger})^{k} + (a^{\dagger})^2 a(a^{\dagger})^{k-2}(\tilde{b}^{\dagger})^k\\
+	& \cdots\\
+	&= k (a^{\dagger})^{k-1}(\tilde{b}^{\dagger})^{k} + (a^{\dagger} \tilde{b}^{\dagger})^{k} a
+	\end{split}
+\end{equation}
+Therefore,
+\begin{equation}
+	a(a^{\dagger}\tilde{b}^{\dagger})^k |0\rangle_A \otimes |0\rangle_B = k(a^{\dagger})^{k-1} (\tilde{b}^{\dagger})^{k} |0 \rangle_A \otimes |0 \rangle_B
+\end{equation}
+Next, 
+\begin{equation}
+	\begin{split}
+	a \exp\left(-\tanh \theta a^{\dagger} b^{\dagger} \right) \rdirac{0}_A \otimes \rdirac{0}_B  &= a \sum_{k=0}^{\infty} \frac{\left(-\tanh \theta a^{\dagger} b^{\dagger} \right)^k}{k!} \rdirac{0}_A \otimes \rdirac{0}_B \\
+	& =\sum_{k=1}^{\infty} \frac{(a^{\dagger})^{k-1}(-\tanh \theta b^{\dagger})^k }{(k-1)!}\rdirac{0}_A \otimes \rdirac{0}_B\\
+	& = -\tanh\theta b^{\dagger}\exp\left(- \tanh\theta a^{\dagger}b^{\dagger} \right) \rdirac{0}_A \otimes \rdirac{0}_B
+	\end{split}
+\end{equation}
+Hence 
+\begin{equation}
+	\begin{split}
+	\tilde{a} \rdirac{\Psi} & = - \tanh\theta b^{\dagger} \exp(-\tanh \theta a^{\dagger}b^{\dagger}) + \frac{\sinh \theta}{\cosh \theta} b^{\dagger} \exp\left(-\tanh\theta a^{\dagger} b^{\dagger} \right)\\
+	&= 0
+	\end{split}
+\end{equation}
+Similarly, we have $\tilde{b}\rdirac{\Psi}=0$.
 \subsection{}
 To compute $\tr g^j$, we have
 \begin{equation}
@@ -52,3 +81,21 @@ so
 	& = \frac{7}{6} V_2 \int_{\epsilon^2}^{\infty} \frac{\D s}{8 \pi s^2} e^{-sm^2}
 	\end{split}
 \end{equation}
+However, we have 
+\begin{equation}
+	\begin{split}
+	\int_{\epsilon^2}^{\infty}\frac{\D s}{s^2}e^{-sm^2}=\frac{e^{-(\epsilon m)^2}}{\epsilon^2} - m^2 \int_{(\epsilon m)^2}^{\infty} \frac{1}{sm^2} e^{-sm^2}d(sm^2)  \\
+	\end{split}
+\end{equation}
+and together with formula of exponential integral
+\[
+ \int_{z}^{\infty} \frac{e^{-t}}{t} d t = E_1(z) = -\gamma -\ln(z) -\sum_{k=1}^{\infty} \frac{(-z)^k}{k k!}
+\]
+where $\gamma$ is Euler–Mascheroni constant, we have 
+\begin{equation}
+	\begin{split}
+	\int_{\epsilon^2}^{\infty}\frac{\D s}{s^2}e^{-sm^2} &= \frac{e^{-(\epsilon m)^2}}{\epsilon^2} + m^2 \left( \gamma + 2 \ln(\epsilon m) + \sum_{k=1}^{\infty} \frac{(-1)^k}{k k!} (\epsilon m)^k \right) \\
+	&= \epsilon^{-2} + 2\ln (\epsilon m) + m^2 \gamma + \sum_{k=1}^{\infty} \left( (-1)^{k} \left( 1+ \frac{1}{k k!}\right) (\epsilon m)^{2k}\right)
+	\end{split}
+\end{equation}
+Hence the leading divergent term of $S_A$ when $\epsilon \to 0$  is $\frac{7}{6} V_2 \epsilon^{-2}$. (I think what the homework claims here shouldn't be $\epsilon \to 1$ )
