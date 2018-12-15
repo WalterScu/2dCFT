@@ -1,0 +1,54 @@
+\newpage
+\section{Homework 12}
+\subsection{Entanglement entropy}
+\subsubsection{Spins of two sites}
+Since 
+\begin{equation}
+	\langle \Psi | = \cos \theta \langle 0 |_A \langle 1|_B + \sin \theta \langle 1|_A \langle 0|_B
+\end{equation}
+We have 
+\begin{equation}
+	\rho_A = \tr_{H_B} | \Psi\rangle \langle \Psi | = \cos^2(\theta) | 0\rangle_A \langle 0|_A + \sin^2(\theta) \rdirac{1}_A \ldirac{1}_A
+\end{equation}
+Therefore, the entanglement entropy for subsystem $A$ is 
+\begin{equation}
+	\begin{split}
+	S_A & = - \tr_{H_A} \left( \rho_A \log \rho_A \right)\\
+	& = - \sin^2(\theta) \log\left( \sin^2(\theta)\right)\\
+	\end{split}
+\end{equation}
+where $\theta \neq k \pi $. Let $\alpha = \sin^2(\theta)$, then $\alpha \in (0, 1]$ and $S_A= - \alpha \log\left(\alpha\right)$. The derivative of $S_A$ with respect to $\alpha$ is
+\begin{equation}
+	(S_A)'_\alpha = -1 - \log(\alpha)
+\end{equation} 
+It decreases at $(0, 1]$ and reach zero at point $\alpha = e^{-1}$. Therefore, $S_A$ reaches the maximal value at $\alpha= e^{-1}$, i.e., $\theta =\pm \arcsin e^{-1/2}+ 2k\pi$.
+\subsubsection{Entanglement entropy of harmonic oscillators}
+\subsection{}
+To compute $\tr g^j$, we have
+\begin{equation}
+	 \begin{split}
+	 \int \D z \D \bar{z} \delta\left(z-e^{i 2\pi j/N}z\right) \delta \left(\bar{z} - e^{-i2\pi j/N}\bar{z} \right)&= \int \D s \D\bar{s} \frac{1}{(1- e^{i 2\pi j/N})(1-e^{-i 2\pi j/N})} \delta(s) \delta(\bar{s})\\
+	 &= \frac{1}{2- e^{i 2\pi j/N}-e^{-i 2\pi j/N}} \int \D s \delta(s)\int \D\bar{s} \delta(\bar{s})\\
+	 & = \frac{1}{2- 2\cos(2\pi j/N)}\\
+	 & =\frac{1}{4 \sin^2 (\pi j/N) }
+	 \end{split}
+\end{equation}
+Using the identity
+\[
+\sum_{j=1}^{N-1} \frac{1}{\sin^2 \pi j/N} = \frac{N^2-1}{3}
+\] 
+we have 
+\begin{equation}
+	\begin{split}
+	\log Z_{\mathbb{C}/\mathbb{Z}_N}& = V_2 \int_{\epsilon^2}^{\infty} \frac{\D s}{8 \pi s^2} e^{-sm^2} \cdot \sum_{j=0}^{N-1} \tr \left( \frac{g^j}{N} \right)\\
+	& = V_2 \int_{\epsilon^2}^{\infty} \frac{\D s}{8 \pi s^2} e^{-sm^2} \cdot\frac{N^2-1}{12N}
+	\end{split}
+\end{equation}
+so
+\begin{equation}
+	\begin{split}
+	S_A & = -\frac{\partial}{\partial (1/N)} \left(\log Z_{\mathbb{C}/\mathbb{Z}_N} - \frac{1}{N} \log Z_{\mathbb{C}} \right)_{N=1}\\
+	& = - V_2 \int_{\epsilon^2}^{\infty} \frac{\D s}{8 \pi s^2} e^{-sm^2}\frac{\partial}{\partial (1/N)}\left( \frac{N^2-13}{12N} \right)_{N=1}\\
+	& = \frac{7}{6} V_2 \int_{\epsilon^2}^{\infty} \frac{\D s}{8 \pi s^2} e^{-sm^2}
+	\end{split}
+\end{equation}
