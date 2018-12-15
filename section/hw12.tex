@@ -52,6 +52,30 @@ Hence
 	\end{split}
 \end{equation}
 Similarly, we have $\tilde{b}\rdirac{\Psi}=0$.
+
+We have 
+\begin{equation}
+	\begin{split}
+	\rdirac{\Psi} & = \frac{1}{\cosh \theta} e^{-\tanh \theta a^{\dagger} b^{\dagger}} \rdirac{0}_A \otimes \rdirac{0}_B\\
+	& = \frac{1}{\cosh \theta} \sum_{k=0}^{\infty} \left( - \tanh \theta a^{\dagger} \right)^k \rdirac{0}_A \otimes \rdirac{k}_B\\
+	\end{split}
+\end{equation}
+It implies
+\begin{equation}
+	\begin{split}
+	\rdirac{\Psi} \ldirac{\Psi} & = \frac{1}{\cosh^2 \theta} \sum_{m=0,n=0}^{\infty}\frac{(-\tanh \theta)^{m+n}}{m!n!} \left(a^{\dagger} \right)^m \rdirac{0}_A \otimes \rdirac{m}_B \ldirac{0}_A \otimes \ldirac{n}_B (a)^n
+	\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\rho_A = \tr_{H_B} \rdirac{\Psi} \ldirac{\Psi}& =\frac{1}{\cosh^2 \theta} \sum_{m=0,n=0}^{\infty} \frac{(-\tanh \theta)^{m+n}}{(m-1)!(n-1)!} (a^{\dagger})^{m-1}\rdirac{1}_A \ldirac{1}_A (a)^{n-1}\\
+& =  \frac{\tanh^2 \theta}{\cosh^2 \theta} \exp\left(-\tanh \theta a^{\dagger} \right) \rdirac{1}_A \ldirac{1}_A \exp\left(-\tanh \theta a \right)
+\end{split}
+\end{equation}
+Therefore, 
+\begin{equation}
+	\log \rho_A = \log \left( \frac{\tanh^2 \theta}{\cosh^2 \theta} \right) \tanh^2 \theta \rdirac{2}_A \ldirac{2}_A
+\end{equation}
 \subsection{}
 To compute $\tr g^j$, we have
 \begin{equation}
