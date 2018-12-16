@@ -57,7 +57,7 @@ We have
 \begin{equation}
 	\begin{split}
 	\rdirac{\Psi} & = \frac{1}{\cosh \theta} e^{-\tanh \theta a^{\dagger} b^{\dagger}} \rdirac{0}_A \otimes \rdirac{0}_B\\
-	& = \frac{1}{\cosh \theta} \sum_{k=0}^{\infty} \left( - \tanh \theta a^{\dagger} \right)^k \rdirac{0}_A \otimes \rdirac{k}_B\\
+	& = \frac{1}{\cosh \theta} \sum_{k=0}^{\infty} \frac{\left( - \tanh \theta a^{\dagger} \right)^k}{k!} \rdirac{0}_A \otimes \rdirac{k}_B\\
 	\end{split}
 \end{equation}
 It implies
@@ -68,13 +68,21 @@ It implies
 \end{equation}
 \begin{equation}
 \begin{split}
-\rho_A = \tr_{H_B} \rdirac{\Psi} \ldirac{\Psi}& =\frac{1}{\cosh^2 \theta} \sum_{m=0,n=0}^{\infty} \frac{(-\tanh \theta)^{m+n}}{(m-1)!(n-1)!} (a^{\dagger})^{m-1}\rdirac{1}_A \ldirac{1}_A (a)^{n-1}\\
+\rho_A = \tr_{H_B} \rdirac{\Psi} \ldirac{\Psi}& =\frac{1}{\cosh^2 \theta} \sum_{m=1,n=1}^{\infty} \frac{(-\tanh \theta)^{m+n}}{(m-1)!(n-1)!} (a^{\dagger})^{m-1}\rdirac{1}_A \ldirac{1}_A (a)^{n-1}\\
 & =  \frac{\tanh^2 \theta}{\cosh^2 \theta} \exp\left(-\tanh \theta a^{\dagger} \right) \rdirac{1}_A \ldirac{1}_A \exp\left(-\tanh \theta a \right)
 \end{split}
 \end{equation}
 Therefore, 
 \begin{equation}
-	\log \rho_A = \log \left( \frac{\tanh^2 \theta}{\cosh^2 \theta} \right) \tanh^2 \theta \rdirac{2}_A \ldirac{2}_A
+	\rho_A^n = \frac{\tanh^{2n} \theta}{\cosh^{2n} \theta}(1+\tanh^2\theta)^{n-1}\exp\left(-\tanh \theta a^{\dagger} \right) \rdirac{1}_A \ldirac{1}_A \exp\left(-\tanh \theta a \right) 
+\end{equation}
+So 
+\begin{equation}
+	\begin{split}
+	S_A &= - \frac{\partial}{\partial n} \log \tr_{H_A} \rho_A^n\\
+	& = - \frac{\partial}{\partial n} \left( 2n \log(\tanh \theta ) -2n \log (\cosh \theta) + (n-1) \log(1+ \tanh ^2 \theta) + \tr_{H_A}\exp\left(-\tanh \theta a^{\dagger} \right) \rdirac{1}_A \ldirac{1}_A \exp\left(-\tanh \theta a \right)  \right)\\
+	& = \log \left(\frac{\cosh^2 \theta}{\tanh^2 \theta (1+ \tanh^2\theta)}\right)
+	\end{split}
 \end{equation}
 \subsection{}
 To compute $\tr g^j$, we have
