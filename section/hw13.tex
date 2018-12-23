@@ -25,6 +25,14 @@ Therefore, summing them up, we have
 	\D s^2 = R^2 \left( \frac{\D u^2}{u^2} + u^2 (-\D t^2 + \sum_i \D x_i^2)\right)
 \end{equation}
 \subsubsection{}
+The coordinates of points in $\gamma_A$ satisfy $x^2 + z^2 = l^2/4$. So $\D x = \frac{-z}{\sqrt{l^2/4 - z^2}} \D z$
+The length of $\gamma_A$ is 
+\begin{equation}
+	\begin{split}
+	\int_{\gamma_A} ds & = 2 R\int_{\epsilon}^{l/2}  \sqrt{\frac{1}{z^2} + \frac{z^2}{l^2/4 -z^2}}\\
+	& = \frac{4R}{l} \int_{\epsilon}^{l/2} \frac{\D z}{z \sqrt{1- 4z^2/l^2}}
+	\end{split}
+\end{equation}
 To compute the integral
 \[
 \int_{\epsilon}^{l/2} \frac{\D z}{z \sqrt{1-4z^2/l^2}}
@@ -47,5 +55,5 @@ Let $t = \tan (\theta/2)$, the equation \ref{eq148} becomes since $\tan(\theta/2
 \end{equation}
 Hence 
 \begin{equation}
-	S_A = \frac{R}{2G} \log \left( \frac{l}{\epsilon} \right)
+	S_A = \frac{R}{lG} \log \left( \frac{l}{\epsilon} \right)
 \end{equation}
